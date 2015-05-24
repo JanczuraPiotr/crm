@@ -1,11 +1,5 @@
 /vendor/
 /UPGRADE.md
-/UPGRADE-2.2.md
-/UPGRADE-2.4.md
-/UPGRADE-2.3.md
-/app/logs/
-/app/cache/
-/app/phpunit.xml.dist
 /nbproject/
 /client/ext/5.1.0/
 /client/help/pomoc-admin-super.odt

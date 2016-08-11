@@ -118,7 +118,7 @@ class DB extends \pjpl\db\DB{
    * @param type $µs
    */
   public function doneCreating($tabela_id,$µs){
-		// @prace 2014-01-01 Dokończ tak by kolumna "create" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
+		// @work 2014-01-01 Dokończ tak by kolumna "create" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
   }
   /**
    * Wywoływana zwrotnie gdy przez tabelę która skasowała rekord
@@ -126,7 +126,7 @@ class DB extends \pjpl\db\DB{
    * @param type $µs
    */
   public function doneDeleting($tabela_id,$µs){
-		// @prace 2014-01-01 Dokończ tak by kolumna "update" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
+		// @work 2014-01-01 Dokończ tak by kolumna "update" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
   }
   /**
    * Wywoływana zwrotnie gdy tabelea uaktualniła rekord
@@ -134,7 +134,7 @@ class DB extends \pjpl\db\DB{
    * @param int $µs
    */
   public function doneUpdating($tabela_id,$µs){
-		// @prace 2014-01-01 Dokończ tak by kolumna "delete" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
+		// @work 2014-01-01 Dokończ tak by kolumna "delete" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
   }
   /**
    * @return \AdministratorzyTable

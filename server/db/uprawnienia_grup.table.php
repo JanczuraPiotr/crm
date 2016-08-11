@@ -8,7 +8,7 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @prace 2014-10-18 Duża przebudowa DependencyTableRecord
+ * @work 2014-10-18 Duża przebudowa DependencyTableRecord
  */
 
 class UprawnieniaGrup extends Encja{

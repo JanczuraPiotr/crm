@@ -5,7 +5,7 @@
  * use client\app\model\SlownikDokumentowModel
  * 
  * @confirm 2014-12-22
- * @prace 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
+ * @work 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  */
 Ext.define('SlownikDokumentowStore',{
 	extend : 'Ext.data.Store',

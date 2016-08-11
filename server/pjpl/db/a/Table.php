@@ -74,7 +74,7 @@ abstract class Table{
    * Obiekt $Encja nie trafia do bufora wewnętrznego lecz od razu zapisywana jest w bazie danych
    * @param Encja $Encja - tablica Encji
    * @return Record - Record utworzony na podstawie Encji
-	 * @prace 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   public function createRecordImmediately(Encja $Encja){
 		try{
@@ -93,7 +93,7 @@ abstract class Table{
    * Encje nie są wstawioane do bufora wewnętrznego lecz od razu zapisywane są w bazie.
    * @param array $Encja
    * @return array - tablica w której klucz wskazuje na Encję a wartość wskazuje na rekord który powstał na jej podstwie
-	 * @prace 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   public function createRecordsArrayImmediately(array $Encje){
 		try{
@@ -121,7 +121,7 @@ abstract class Table{
 	/**
 	 * @param type $id
 	 * @return Table
-	 * @prace 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
 	 */
   public function deleteIdImmediately($id){
 		try{
@@ -241,7 +241,7 @@ abstract class Table{
 	 * @param int $start
 	 * @param int $limit
 	 * @return \pjpl\db\a\Table
-	 * @prace 2014-10-14 Dodano modyfikację zmiennej $this->limit_string
+	 * @work 2014-10-14 Dodano modyfikację zmiennej $this->limit_string
 	 * @confirm 2014-09-26
 	 */
 	public function limit($start, $limit){
@@ -263,7 +263,7 @@ abstract class Table{
 	/**
 	 * Wczytuje rekordy na podstawie wcześniejszej konfuifuracji metodami where() i limit()
 	 * @return Table
-	 * @prace 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
 	 * @confirm 2014-09-26
 	 */
 	public function load(){
@@ -332,7 +332,7 @@ abstract class Table{
 	/**
 	 * @param Record $Record
 	 * @return Table
-	 * @prace 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
 	 */
   public function updateRecordImmediately(Record $Record){
 		try{
@@ -347,7 +347,7 @@ abstract class Table{
   /**
 	 * @param array $Records
 	 * @return Table
-	 * @prace 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
 	 */
 	public function updateRecordsArrayImmediately(array $Records){
 		try{
@@ -394,7 +394,7 @@ abstract class Table{
   /**
    * Usuwa rekordy oznaczone jako do usunięcia : z bazy i tego obiektu
 	 * @return Table
-	 * @prace 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   protected function delete(){
 		try{
@@ -480,7 +480,7 @@ abstract class Table{
   /**
    * Aktualizuje rekordy w bazie danych oznaczonych do aktualizacji na podstawie operacji wykonanych po załądowniu obecnego zestawu rekordów
 	 * @return Table
-	 * @prace 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   protected function update(){
 		try{

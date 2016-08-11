@@ -1,6 +1,6 @@
 /**
- * @prace 2014-12-30 Edycja przed chwilą dodanego rekordu nie uaktywnia operacji zapisu na server
- * @prace 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @work 2014-12-30 Edycja przed chwilą dodanego rekordu nie uaktywnia operacji zapisu na server
+ * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
  */
 Ext.define('PracownicyWindow',{
 	extend : 'Ext.window.Window',

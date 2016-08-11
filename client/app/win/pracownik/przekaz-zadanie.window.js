@@ -1,7 +1,7 @@
 /**
  * Przekazuje zadanie od pracownika szeregowego do jego lidera.
  * @confrim 2014-08-28
- * @prace 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
  */
 Ext.define('PrzekazZadanieWindow',{
 	extend : 'Ext.window.Window',

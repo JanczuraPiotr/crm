@@ -1,6 +1,6 @@
 /**
  * @confirm 2014-09-23
- * @prace 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
  */
 Ext.define('WiazanieFirmBankowWindow',{
 	extend : 'Ext.window.Window',

@@ -10,7 +10,7 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @prace 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
  */
 class Zadanie extends Encja{
 	public function __get($attribute) {

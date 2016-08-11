@@ -1,6 +1,6 @@
 /**
  * Nagłówki zadań. W praktyce rekordy zebrane na podstawie ostatnich kroków zadań.
- * @prace 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
+ * @work 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  * @confirm 2015-03-12 extjs 5.1.0
  * @confirm 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
  * @confirm 2014-08-28

@@ -1,5 +1,5 @@
 /**
- * @prace 2014-12-23
+ * @work 2014-12-23
  */
 
 Ext.define('NadzorKlientowGrid',{

@@ -1,5 +1,5 @@
 /**
- * @prace 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
  * @err 2014-09-22 Nie działa tworzenie stanowisk pracy ze względu na błędy kluczy obcych
  * @err 2014-09-22 Nie działa wybór statusu stanowiska - przy tworzezniu zadania wcale, przy edycji istniejącego do zatwierdzenia
  */

@@ -5,8 +5,8 @@ use crmsw\lib\a\BusinessLogic;
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @prace 2014-09-17 Przebudowa klasy NextStep
- * @prace 2014-09-04 Przebudowa klasy Zadanie
+ * @work 2014-09-17 Przebudowa klasy NextStep
+ * @work 2014-09-04 Przebudowa klasy Zadanie
  * @confirm 2014-08-20
  */
 class TransferFromLeaderToLeader extends BusinessLogic{

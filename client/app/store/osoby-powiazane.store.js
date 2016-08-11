@@ -1,6 +1,6 @@
 /**
  * @confirm 2014-11-05
- * @prace 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
+ * @work 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  */
 Ext.define('OsobyPowiazaneStore',{
 	extend : 'Ext.data.Store',

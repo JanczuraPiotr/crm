@@ -11,7 +11,7 @@ use crmsw\lib\db\Record;
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
  * @confirm 2014-11-05 Duża przebudowa DependencyTableRecord
- * @prace 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
  */
 class ZadanieDokument extends Encja{
 	public function __get($attribute) {

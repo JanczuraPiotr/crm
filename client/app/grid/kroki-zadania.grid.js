@@ -5,7 +5,7 @@
  * Gdy ostatni krok zadania został wykonany przez inne stanowisko pracy niż to które je przegląda blokowane są przyciski do pracy z zadaniem.
  * @confirm 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
  * @confirm 2014-08-27 Rozróżnianie zadań według przynależności do stanowiska.
- * @prace 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
  * namespace client\app\grid
  */
 Ext.define('KrokiZadaniaGrid',{

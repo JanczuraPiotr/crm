@@ -1,7 +1,7 @@
 /**
  * @confirm 2015-03-12 extjs 5.1.0
- * @prace 2014-10-30 Zamiana response.ret >>> response.code
- * @prace 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
+ * @work 2014-10-30 Zamiana response.ret >>> response.code
+ * @work 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  */
 Ext.define('StanowiskaPodleglejGrupyStore',{
 	extend : 'Ext.data.Store',

@@ -3,7 +3,7 @@
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @prace 2014-10-20 Przebudowa Table do obsługi zapytań preparowanych
+ * @work 2014-10-20 Przebudowa Table do obsługi zapytań preparowanych
  * @confirm 2014-10-24 Duża przebudowa DependencyTableRecord
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */

@@ -1,7 +1,7 @@
 /**
  * @task 2014-10-30 Zamiana response.ret >>> response.code
  * @task 2014-10-30 Dodanie do response tablicy "err" informującej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
- * @task 4.2.0
+ * @work 4.2.0
  */
 Ext.define('PochodzenieKlientowStore',{
 	extend : 'Ext.data.Store',
@@ -118,8 +118,8 @@ Ext.define('PochodzenieKlientowStore',{
 
 		reader : { // PochodzenieklientowStore::proxy::reader
 			type : 'json',
-			rootProperty : 'data',
-			totalProperty : 'countTotal'
+			root : 'data',
+			total : 'countTotal'
 		} // CPochodzenieklientowStore::proxy::reader
 
 	} // PochodzenieklientowStore::proxy

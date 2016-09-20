@@ -1,5 +1,5 @@
 /**
- * @task 4.2
+ * @work 4.2.0
  */
 Ext.onReady(function(){
 	Ext.tip.QuickTipManager.init();
@@ -24,10 +24,10 @@ Ext.onReady(function(){
 			{
 				text : 'klienci',
 					handler : function(){
-						if(KlienciWindow === null){
-							KlienciWindow = new Ext.create('KlienciWindow').show();
-						}else{
+						try{
 							KlienciWindow.show().expand();
+						}catch(e){
+							KlienciWindow = new Ext.create('KlienciWindow').show();
 						}
 					}
 			},{

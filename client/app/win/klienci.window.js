@@ -1,53 +1,43 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  */
 Ext.define('KlienciWindow',{
 	extend : 'Ext.window.Window',
 	title : 'Klienci [dane podstawowe]',
 	resizable : false,
+	collapsible : true,
 
-	constructor : function(){
+	constructor : function(){console.log('KlienciWindow::constructor');
 		var def = this;
-
-//		Ext.define('KlienciWindow.OsobyPowiazaneGrid',{
-//			extend : 'OsobyPowiazaneGrid',
-//			width : 1300,
-//			height : 150
-//		});
 
 		Ext.define('KlienciWindow.KlienciGrid',{
 			extend : 'KlienciGrid',
 			flex :1,
 			listeners : {
 				select : function( thiss, record, index, eOpts ){
-					def.Edytor.setValue(record.data.opis);
-//					def.OsobyPowiazaneGrid.setKlientId(record.data.id);
+					console.log('KlienciWindow.KlienciGrid.select');
+					def.Editor.setValue(record.data.opis);
 				},
 				deselect : function( thiss, record, index, eOpts ){
-					def.Edytor.setValue('');
+					console.log('KlienciWindow.KlienciGrid.deselect');
+					def.Editor.setValue('');
 				}
 			}
 		});
-//		def.OsobyPowiazaneGrid = new Ext.create('KlienciWindow.OsobyPowiazaneGrid');
-		def.KlienciGrid = new Ext.create('KlienciWindow.KlienciGrid');
+
+		def.KlienciGrid = Ext.create('KlienciWindow.KlienciGrid');
 		def.KlienciGrid.store.on('update', function( This, record, operation, modifiedFieldNames, eOpts ){
-			def.Edytor.setValue(record.data.opis);
+			def.Editor.setValue(record.data.opis);
 		});
 
-		def.Edytor = Ext.create('Ext.form.field.HtmlEditor',{
+		// @todo Ukryć toolbar
+		def.Editor = Ext.create('Ext.form.field.HtmlEditor',{
 			readOnly : true,
 			width : 600,
 			height : 505,
-			enableAlignments : false,
-			enableColors : false,
-			enableFont : false,
-			enableFontSize : false,
-			enableFormat : false,
-			enableLinks : false,
-			enableLists : false,
-			enableSourceEdit : false
 		});
-		def.callParent(arguments);
+
+		def.callParent();
 	},
 
 	initComponent : function(){
@@ -76,16 +66,15 @@ Ext.define('KlienciWindow',{
 							},
 							items : [
 								def.KlienciGrid,
-								def.Edytor
+								def.Editor
 							]
 						},
-//						def.OsobyPowiazaneGrid
 					]
 				}
 			]
 
 		});
-		def.callParent();
+		def.callParent(arguments);
 	},
 
 	listeners : {

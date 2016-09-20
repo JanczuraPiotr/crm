@@ -1,6 +1,6 @@
 /**
  * Formularz dodawania i edycji danych klienta
- * @task 4.2.0
+ * @work 4.2.0
  */
 
 Ext.define('KlientForm',{
@@ -25,6 +25,7 @@ Ext.define('KlientForm',{
 			def.createRecord = false;
 		}
 		def.PochodzenieKlientowStore = Ext.create('PochodzenieKlientowStore');
+		// @todo nie pojawia się:
 		def.PochodzenieKlientowCombo = Ext.create('Ext.form.field.ComboBox',{
 			name : 'pochodzenie_klientow_id',
 			xtype : 'combobox',
@@ -57,18 +58,19 @@ Ext.define('KlientForm',{
 				}
 			}
 		});
+
 		def.Edytor = Ext.create('Ext.form.field.HtmlEditor',{
 			enableSourceEdit : false,
 			width : 600,
-			height : 335
+			height : 335,
+			value : def.recKlient.data.opis
 		});
-
 		def.callParent(arguments);
 
 		def.Form = def.down('form').getForm();
 		if(def.recKlient !== null){
 			def.Form.setValues(def.recKlient.data);
-			def.Edytor.setValue(def.recKlient.data.opis);
+			// Czemu nie działa ? def.Edytor.setValue(def.recKlient.data.opis);
 		}
 
 	},

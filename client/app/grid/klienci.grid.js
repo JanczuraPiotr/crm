@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  * @todo Dodać jakiś przycisk powodujący wyczyszczenie wszystkich pól edycyjnych filtra.
  * @todo Kolumny liczbowe wyrównać do prawej strony.
  * @todo Data następnej dostawy musi uwzględnić godziny

@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  * @done 2014-12-30 Dodanie do response tablicy "err" informującej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  * @todo Rozbić komunikację by kolumna "opis" była wczytywana dopiero bo zaznaczeniu klienta
  */
@@ -124,7 +124,7 @@ Ext.define('KlienciStore',{
 		writer : {
 			writeAllFields : false,
 			allowSingle : false,
-			rootProperty : 'data',
+			root : 'data',
 			getRecordData : function(record,operation){
 				return record.data;
 			}
@@ -132,8 +132,8 @@ Ext.define('KlienciStore',{
 
 		reader : {
 			type : 'json',
-			rootProperty : 'data',
-			totalProperty : 'countTotal'
+			root : 'data',
+			tota : 'countTotal'
 		}
 
 	},

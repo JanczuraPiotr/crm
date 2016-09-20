@@ -1,9 +1,10 @@
 <?php
 /**
- * @package crmsw
+ * Obecnie brak obsługi zwykłego administratora
+ * @package crm
  * @subpackage client
  * @author Piotr Janczura <piotr@janczura.pl>
- * @done 2014-09-09
+ * @done 4.2.0
  */
 @session_start();
 require_once '../server/pjpl/error.php';

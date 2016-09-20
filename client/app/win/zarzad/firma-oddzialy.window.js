@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  */
 Ext.define('FirmaOddzialyWindow',{
 	extend : 'Ext.window.Window',
@@ -27,6 +27,7 @@ Ext.define('FirmaOddzialyWindow',{
 		});
 		def.callParent();
 	},
+
 	listeners : {
 		close : function(thet , eOpts){
 			delete FirmaOddzialyWindow;

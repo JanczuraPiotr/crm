@@ -1,8 +1,9 @@
 <?php
 /**
- * @package crmsw
+ * @package crm
  * @subpackage client
  * @author Piotr Janczura <piotr@janczura.pl>
+ * @work 4.2.0
  */
 require_once '../config.php';
 require_once '../server/pjpl/error.php';

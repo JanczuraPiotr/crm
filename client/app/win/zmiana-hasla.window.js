@@ -1,6 +1,3 @@
-/**
- * @confirm 2014-12-30
- */
 Ext.define('ZmianaHaslaWindow',{
   extend : 'Ext.window.Window',
 	id : 'zmiana-hasla-window',

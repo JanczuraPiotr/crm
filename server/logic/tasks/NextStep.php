@@ -14,7 +14,7 @@ use pjpl\e\NoEncja;
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-20
+ * @done 2014-12-20
  */
 class NextStep extends BusinessLogic{
   public function __construct() {
@@ -54,7 +54,7 @@ class NextStep extends BusinessLogic{
 	 * @param Encja $eNewStep - Encja w formie nadesłanej przez klienta informująca o wykonaniu kroku.
 	 * @return Encja Encja w formie nadesłanej przez klienta infiormująca o wykonaniu kroku.
 	 * @throw ENoEncja
-	 * @confirm 2014-09-10 Przebudowa klasy Zadanie
+	 * @done 2014-09-10 Przebudowa klasy Zadanie
 	 */
 	protected function previousStepEnd(Encja $eNewStep){
 		$this->ZadaniaTable->where(new Where([

@@ -4,8 +4,8 @@
  * namespace client\app\store
  * use client\app\model\DokumentyZadaniaModel
  *
- * @confirm 2014-11-05
- * @work 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
+ * @task 4.2.0
+ * @task 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  */
 Ext.define('DokumentyZadaniaStore',{
 	extend : 'Ext.data.Store',

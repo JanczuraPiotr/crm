@@ -3,9 +3,9 @@ namespace crmsw\lib\db\a;
 use pjpl\db\a\DependenceTableRecord;
 use pjpl\db\Record;
 /**
- * @confirm 2014-12-19
- * @work 2014-12-18 Do tabel dodać kolumnę delete i ustawiać ja czasem µs kasowania rekordu. Skasowanie rekordu będzie odbywało się poprzez ustawienie tej kolumny
- * @work 2014-12-18 Utworzyć metodę clean() która będzie usuwać z tabeli rekordy oznaczone za skasowane
+ * @done 2014-12-19
+ * @task 2014-12-18 Do tabel dodać kolumnę delete i ustawiać ja czasem µs kasowania rekordu. Skasowanie rekordu będzie odbywało się poprzez ustawienie tej kolumny
+ * @task 2014-12-18 Utworzyć metodę clean() która będzie usuwać z tabeli rekordy oznaczone za skasowane
  */
 abstract class Table extends \pjpl\db\a\Table{
 
@@ -60,7 +60,7 @@ abstract class Table extends \pjpl\db\a\Table{
 	/**
 	 * @param Record $Record
 	 * @return Table
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
 	 */
   public function updateRecordImmediately(Record $Record){
     if($this->DB->canUpdate($this->DI->TabelaId())){

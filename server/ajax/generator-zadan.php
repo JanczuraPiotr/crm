@@ -4,7 +4,7 @@ namespace crmsw\ajax;
  * @package crmsw
  * @subpackage ajax
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
+ * @done 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
  */
 require_once '../../config.php';
 if( ! isset($_SESSION['USER_STATUS'])){
@@ -20,7 +20,7 @@ if(isset($_REQUEST['action'])){
 
 switch ($action) {
 
-	case 'generate':// @confirm 2014-09-15
+	case 'generate':// @done 2014-09-15
 		$Generator = new \crmsw\logic\tasks\UnthinkingGenerator();
 		echo $Generator->externalCall($_REQUEST);
 		break;

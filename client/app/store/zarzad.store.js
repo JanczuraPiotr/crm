@@ -1,7 +1,7 @@
 /**
- * @work 2014-10-30 Zamiana response.ret >>> response.code
- * @work 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
- * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @task 2014-10-30 Zamiana response.ret >>> response.code
+ * @task 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
+ * @work 4.2.0
  */
 Ext.define('ZarzadStore',{
 	extend : 'Ext.data.Store',
@@ -140,7 +140,7 @@ Ext.define('ZarzadStore',{
 		writer : { // ZarzadStore::proxy::writer
 			writeAllFields : false,
 			allowSingle : false,
-			rootProperty : 'data',
+			root : 'data',
 			getRecordData : function(record,operation){
 				return record.data;
 			}
@@ -148,8 +148,8 @@ Ext.define('ZarzadStore',{
 
 		reader : { // ZarzadStore::proxy::reader
 			type : 'json',
-			rootProperty : 'data',
-			totalProperty : 'countTotal'
+			root : 'data',
+			total : 'countTotal'
 		} // ZarzadStore::proxy::reader
 
 	}, // ZarzadStore::proxy

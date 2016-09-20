@@ -9,7 +9,7 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @work 2014-10-18 Duża przebudowa DependencyTableRecord
+ * @task 2014-10-18 Duża przebudowa DependencyTableRecord
  */
 
 class Updates extends Encja{

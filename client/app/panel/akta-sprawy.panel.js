@@ -6,7 +6,7 @@
  * use client\app\grid\DokumentyZadaniaGrid
  * use client\app\model\ZadaniaOpisModel
  *
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  */
 Ext.define('AktaSprawyPanel',{
 	extend : 'Ext.panel.Panel',

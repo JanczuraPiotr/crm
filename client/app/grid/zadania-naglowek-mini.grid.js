@@ -1,5 +1,6 @@
 /**
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
+ *
  * @todo Do grida z nagłówkami zadań dodać menu lokalne, w którym wywoływać okno z zadaniami w trakcie, dla klienta, na którym wywołano menu lokalne
  * namespace client\view
  * use client\store\ZadaniaNaglowekSore

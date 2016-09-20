@@ -1,3 +1,6 @@
+/**
+ * @task 4.2.0
+ */
 var ZadaniaNaglowekFields = [
 	{
 		name : 'id',

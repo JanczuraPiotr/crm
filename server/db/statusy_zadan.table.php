@@ -10,8 +10,8 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
- * @work 2014-10-18 Duża przebudowa DependencyTableRecord
+ * @task 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @task 2014-10-18 Duża przebudowa DependencyTableRecord
  */
 class StatusZadania extends Encja{
 	const NIEZAINTERESOWANY					= -1;

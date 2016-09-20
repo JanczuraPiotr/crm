@@ -4,7 +4,7 @@ use crmsw\lib\db\Record;
 use pjpl\db\a\Encja;
 
 /**
- * @confirm 2014-12-19
+ * @done 2014-12-19
  * @doc 2014-12-19
  */
 abstract class DependenceTableRecord extends \pjpl\db\a\DependenceTableRecord{

@@ -1,5 +1,6 @@
 /**
- * @confirm 2014-12-16
+ * @done 2014-12-16
+ * @task 4.2.0
  */
 Ext.define('ZadaniaNaglowekGrid',{
 	extend : 'Ext.grid.Panel',

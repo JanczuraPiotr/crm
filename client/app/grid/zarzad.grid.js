@@ -1,5 +1,6 @@
 /**
- * @confirm 2014-12-31
+ * @done 2014-12-31
+ * @task 4.2.0
  */
 Ext.define('ZarzadGrid',{
 	extend : 'Ext.grid.Panel',

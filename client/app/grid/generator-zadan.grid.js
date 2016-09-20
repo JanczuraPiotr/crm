@@ -1,5 +1,5 @@
 /**
- * @confirm 2014-12-20
+ * @task 4.2.0
  */
 Ext.define('GeneratorZadanGrid',{
 	extend : 'Ext.grid.Panel',

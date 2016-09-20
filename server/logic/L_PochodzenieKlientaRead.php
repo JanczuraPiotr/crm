@@ -4,7 +4,7 @@ use pjpl\db\Where;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-31
+ * @done 2014-12-31
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */
 class L_PochodzenieKlientaRead extends \crmsw\lib\a\BusinessLogic{

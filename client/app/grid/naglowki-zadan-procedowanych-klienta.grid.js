@@ -1,9 +1,9 @@
 /**
  * Nagłówki zadań w trakcie procedowania dla wskazanego klienta.
  * Podobna klasa : ZadaniaNaglowekMiniGrid wyświetla również informacje o kliencie wobec którego wykonywane jest zadanie.
- * @confirm 2015-03-12 extjs 5.1.0
- * @confirm 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
- * @confirm 2014-08-28
+ * @done 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
+ * @done 2014-08-28
+ * @task 4.2.0
  * @todo Do grida z nagłówkami zadań dodać menu lokalne w którym wywoływać okno z zadaniami w trakcie dla klienta na którym wywołano menu lokalne
  * namespace client\app\grid
  * use client\app\store

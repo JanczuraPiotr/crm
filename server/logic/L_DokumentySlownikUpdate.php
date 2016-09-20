@@ -3,8 +3,8 @@
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @work 2014-10-20 Przebudowa Table do obsługi zapytań preparowanych
- * @work 2014-10-20 Duża przebudowa DependencyTableRecord
+ * @task 2014-10-20 Przebudowa Table do obsługi zapytań preparowanych
+ * @task 2014-10-20 Duża przebudowa DependencyTableRecord
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */
 class L_DokumentySlownikUpdate extends \crmsw\lib\a\BusinessLogic{

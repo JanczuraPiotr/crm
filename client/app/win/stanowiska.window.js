@@ -1,5 +1,5 @@
 /**
- * @confirm 2014-12-16
+ * @task 4.2.0
  */
 Ext.define('StanowiskaWindow',{
 	extend : 'Ext.window.Window',

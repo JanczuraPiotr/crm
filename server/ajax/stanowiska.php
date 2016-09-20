@@ -3,7 +3,7 @@
  * @package crmsw
  * @subpackage ajax
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-08-29
+ * @done 2014-08-29
  */
 require_once '../../config.php';
 if( !isset($_SESSION['USER_STATUS'])){

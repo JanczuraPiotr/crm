@@ -6,7 +6,7 @@ use pjpl\db\Where;
  * @package pjpl
  * @subpackage exceptions
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-09-17
+ * @done 2014-09-17
  */
 class NoEncja extends \pjpl\e\a\E{
 	/**

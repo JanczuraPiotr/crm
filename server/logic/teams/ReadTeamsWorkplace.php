@@ -4,7 +4,7 @@ namespace crmsw\logic\teams;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-08-28
+ * @done 2014-08-28
  */
 
 /**

@@ -1,6 +1,6 @@
 /**
- * @confirm 2014-11-05
- * @work 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
+ * @task 4.2.0
+ * @task 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  */
 Ext.define('OsobyPowiazaneStore',{
 	extend : 'Ext.data.Store',
@@ -85,7 +85,7 @@ Ext.define('OsobyPowiazaneStore',{
 				var key;
 				switch(operation.action){
 					case 'create':
-					case 'update': // @confirm 2014-11-03 Nowa struktura jsona
+					case 'update': // @done 2014-11-03 Nowa struktura jsona
 						if(resp.code === E.code.OK){
 							// Nie powiodła się operacja na pojedynczych zestawach danych.
 							for(key in resp.err){
@@ -104,7 +104,7 @@ Ext.define('OsobyPowiazaneStore',{
 						def.rejectChanges();
 						break;
 
-					case 'destroy': // @confirm 2014-11-03 Nowa struktura jsona
+					case 'destroy': // @done 2014-11-03 Nowa struktura jsona
 						if(resp.code === E.code.OK){
 							// Nie powiodła się operacja na pojedynczych zestawach danych.
 							for(key in resp.err){

@@ -4,7 +4,7 @@
  * Obiekt musi być tworzony dopiero po wykonaniu kostruktora rodzica.
  * @param {Ext.grid.Panel} grid
  * @returns {RowsFilter}
- * @confirm 2014-09-29
+ * @done 2014-09-29
  */
 var RowsFilter = function(grid) {
 	var def = this;

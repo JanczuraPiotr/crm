@@ -1,5 +1,5 @@
 /**
- * @confirm 2014-12-31
+ * @task 4.2.0
  */
 Ext.define('FirmyGrid',{
 	extend : 'Ext.grid.Panel',

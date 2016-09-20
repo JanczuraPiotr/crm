@@ -1,5 +1,5 @@
 /**
- * @confirm 2014-12-29
+ * @task 4.2.0
  */
 Ext.define('FirmyOddzialyGrid',{
 	extend : 'Ext.grid.Panel',

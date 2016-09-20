@@ -7,8 +7,8 @@ use pjpl\db\Where as Where;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-11-04 Przebudowa Table do obsługi zapytań preparowanych
- * @confirm 2014-11-04 Duża przebudowa DependencyTableRecord
+ * @done 2014-11-04 Przebudowa Table do obsługi zapytań preparowanych
+ * @done 2014-11-04 Duża przebudowa DependencyTableRecord
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  * @todo Klasa ma złą nazwę - nie wskazuje na status konkretnego zadania lecz na znane typy statusów.
  */

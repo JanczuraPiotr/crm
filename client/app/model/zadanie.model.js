@@ -1,5 +1,6 @@
 /**
- * @confirm 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
+ * @done 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
+ * @task 4.2.0
  */
 var ZadanieFields = [
 	{

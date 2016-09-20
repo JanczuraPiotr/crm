@@ -1,8 +1,8 @@
 /**
  * Zadania do wykonania wobec jednego klienta.
  * Okno wyświetlane jest z menu kontekstowego okna edycji danych podstawowych klienta.
- * @confirm 2015-03-12 extjs 5.1.0
- * @confirm 2014-08-12
+ * @done 2015-03-12 extjs 5.1.0
+ * @done 2014-08-12
  */
 var ZadaniaProcedowaneKlientaWindow = Ext.define('ZadaniaProcedowaneKlientaWindow',{
 	extend : 'Ext.window.Window',

@@ -1,6 +1,6 @@
 /**
- * @confirm 2014-09-23
- * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @done 2014-09-23
+ * @task 4.2.0
  */
 Ext.define('WiazanieFirmBankowGrid',{
 	extend : 'Ext.grid.Panel',

@@ -3,8 +3,8 @@
  *
  * namespace client\app\grid
  * use client\app\store\DokumentyZadaniaStore
- * 
- * @confirm 2014-12-22
+ *
+ * @task 4.2.0
  */
 Ext.define('DokumentyZadaniaGrid',{
 	extend : 'Ext.grid.Panel',

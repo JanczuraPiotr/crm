@@ -6,7 +6,7 @@ namespace pjpl\e\db;
  * @package pjpl
  * @subpackage exceptions
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-09-11
+ * @done 2014-09-11
  */
 class General extends \pjpl\e\a\E{
   public function code(){

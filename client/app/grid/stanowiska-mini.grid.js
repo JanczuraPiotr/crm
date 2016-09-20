@@ -1,7 +1,7 @@
 //"use strict";
 /**
  * Kontrolka wyświetlana gdy potrzeba wybrać oddział firmy
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  * namespace client\app\view
  * use client\app\store\StanowiskaStore
  * use client\app\store\StatusStanowiskaStore

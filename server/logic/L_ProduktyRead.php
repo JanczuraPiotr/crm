@@ -5,7 +5,7 @@ use pjpl\db\Where;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-20
+ * @done 2014-12-20
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */
 

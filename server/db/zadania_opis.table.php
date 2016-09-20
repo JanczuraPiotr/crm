@@ -10,8 +10,8 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-16
- * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @done 2014-12-16
+ * @task 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
  */
 class ZadanieOpis extends Encja{
 	public static function nullRow() {

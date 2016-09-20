@@ -1,6 +1,6 @@
 /**
- * @confirm 2015-01-02 ExtJS 5.1.0
- * @work 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
+ * @task 4.2.0
+ * @task 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  */
 Ext.define('ZadaniaNaglowekPrzydzialStore',{
 	extend : 'Ext.data.Store',

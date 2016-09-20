@@ -12,7 +12,7 @@ use pjpl\e\NoExistAttribute;
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
  * @doc 2014-10-14
- * @confirm 2014-09-03
+ * @done 2014-09-03
  * @todo Rozbudowa o metodę zwracającą tablicę opisującą typy atrybutów i dopuszczalnych a potem o kontrolę czY encja spełnia warunki
  * @todo Opracować sposób testowania poprawności danych przed zapisem do bazy - Na razie błąd w danych stwierdzany jest przez odrzucenie encji przez bazę
  */
@@ -63,7 +63,7 @@ abstract class Encja {
 	 * Tworzy obiekt a z powodu finalności konstruktora jest jedynym miejscem gdzie obiekty potomne można tworzyć w połączeniu z dodatkowymi czynnościami.
 	 * @param array $attributes
 	 * @param int $create_typ
-	 * @confirm 2014-09-03
+	 * @done 2014-09-03
 	 * @return \static
 	 */
 	static public function create($attributes = array(), $create_typ = Encja::CREATE_NULL){

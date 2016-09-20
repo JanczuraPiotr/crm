@@ -1,6 +1,6 @@
 /**
  * Przekazuje zadanie do podwładnego.
- * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @task 4.2.0
  */
 Ext.define('PrzekazZadaniePodwladnemuWindow',{
 	extend : 'Ext.window.Window',

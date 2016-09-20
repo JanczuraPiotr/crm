@@ -9,7 +9,7 @@ use crmsw\lib\a\beta\BusinessLogic;
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-09-18
+ * @done 2014-09-18
  */
 class Allocate extends BusinessLogic{
   public function __construct() {

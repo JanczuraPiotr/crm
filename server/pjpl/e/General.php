@@ -8,7 +8,7 @@ namespace pjpl\e;
  * @package pjpl
  * @subpackage exceptions
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-10-28
+ * @done 2014-10-28
  */
 class General extends \pjpl\e\a\E{
 	protected function code() {

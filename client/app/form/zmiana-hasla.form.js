@@ -1,5 +1,5 @@
 /**
- * @confirm 2014-12-30
+ * @done 4.2.0
  */
 Ext.define('ZmianaHaslaForm',{
 	extend : 'Ext.form.Panel',

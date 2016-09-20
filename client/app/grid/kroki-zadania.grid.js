@@ -3,9 +3,9 @@
  * Grid wyświetlający kroki zadania którego numer przekazany jest za pomocą zmiennej KrokiZadaniaGrid.setNrZadania(nr_zadania);
  * Kroki zadania wykonane przez inne stanowisko niż to które je przegląda wyświetlane są jako wyszarzałe.
  * Gdy ostatni krok zadania został wykonany przez inne stanowisko pracy niż to które je przegląda blokowane są przyciski do pracy z zadaniem.
- * @confirm 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
- * @confirm 2014-08-27 Rozróżnianie zadań według przynależności do stanowiska.
- * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @done 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
+ * @done 2014-08-27 Rozróżnianie zadań według przynależności do stanowiska.
+ * @task 4.2.0
  * namespace client\app\grid
  */
 Ext.define('KrokiZadaniaGrid',{

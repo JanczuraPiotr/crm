@@ -19,7 +19,7 @@ use pjpl\db\Where;
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-20
+ * @done 2014-12-20
  * @doc 2014-12-20
  */
 class Create extends BusinessLogic{

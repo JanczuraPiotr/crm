@@ -1,5 +1,5 @@
 /**
- * @confirm 2014-12-30
+ * @task 4.2.0
  */
 Ext.define('PracownicyMinGrid',{
 	extend : 'Ext.grid.Panel',

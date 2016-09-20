@@ -5,7 +5,7 @@ namespace pjpl\e\a;
  * @package pjpl
  * @subpackage exceptions
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-09-17
+ * @done 2014-09-17
  * @todo logowanie informacji o błędach do bazy danych
  */
 abstract class E extends \Exception{

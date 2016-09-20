@@ -4,7 +4,7 @@ use pjpl\db\a\Encja;
 use pjpl\db\Record;
 use pjpl\db\Where;
 /**
- * @confirm 2014-12-19
+ * @done 2014-12-19
  * @todo Rozważyć czy ponowne wywołanie A_DBTable::read() powinno bez ostrzeżeń czyścić wszystkie tablice przed wczytaniem nowych rekordów
  * @todo Filtry i czytanie z tabeli powinno pozwalać określić czy dotyczą tabeli w bazie czy zbioru pobranego wcześniej i zapianego w tej tabeli
  *				Można dodać metodę odłączającą tabelę od bazy danych na czas wykonywania zapytań na zgromadzonych danych
@@ -74,7 +74,7 @@ abstract class Table{
    * Obiekt $Encja nie trafia do bufora wewnętrznego lecz od razu zapisywana jest w bazie danych
    * @param Encja $Encja - tablica Encji
    * @return Record - Record utworzony na podstawie Encji
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   public function createRecordImmediately(Encja $Encja){
 		try{
@@ -93,7 +93,7 @@ abstract class Table{
    * Encje nie są wstawioane do bufora wewnętrznego lecz od razu zapisywane są w bazie.
    * @param array $Encja
    * @return array - tablica w której klucz wskazuje na Encję a wartość wskazuje na rekord który powstał na jej podstwie
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   public function createRecordsArrayImmediately(array $Encje){
 		try{
@@ -121,7 +121,7 @@ abstract class Table{
 	/**
 	 * @param type $id
 	 * @return Table
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
 	 */
   public function deleteIdImmediately($id){
 		try{
@@ -230,7 +230,7 @@ abstract class Table{
 	/**
 	 * Referencja do obiektu klauzuli where
 	 * @return Where
-	 * @confirm 2014-09-26
+	 * @done 2014-09-26
 	 */
 	public function getWhere(){
 		return $this->Where;
@@ -241,8 +241,8 @@ abstract class Table{
 	 * @param int $start
 	 * @param int $limit
 	 * @return \pjpl\db\a\Table
-	 * @work 2014-10-14 Dodano modyfikację zmiennej $this->limit_string
-	 * @confirm 2014-09-26
+	 * @task 2014-10-14 Dodano modyfikację zmiennej $this->limit_string
+	 * @done 2014-09-26
 	 */
 	public function limit($start, $limit){
 		if($start >= 0 ){
@@ -263,8 +263,8 @@ abstract class Table{
 	/**
 	 * Wczytuje rekordy na podstawie wcześniejszej konfuifuracji metodami where() i limit()
 	 * @return Table
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
-	 * @confirm 2014-09-26
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-09-26
 	 */
 	public function load(){
 		$this->read();
@@ -332,7 +332,7 @@ abstract class Table{
 	/**
 	 * @param Record $Record
 	 * @return Table
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
 	 */
   public function updateRecordImmediately(Record $Record){
 		try{
@@ -347,7 +347,7 @@ abstract class Table{
   /**
 	 * @param array $Records
 	 * @return Table
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
 	 */
 	public function updateRecordsArrayImmediately(array $Records){
 		try{
@@ -371,7 +371,7 @@ abstract class Table{
    * Po zapisaniu rekordu w bazie danych obiekt $Data usuwany jest z listy nowych danych : $this->newData i wraz z identyfikatorem jaki otrzymał nowo utworzony rekord
    * tworzony jest obiekt klasy Record.
 	 * @return Table
-	 * @confirm 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   protected function create(){
 		try{
@@ -394,7 +394,7 @@ abstract class Table{
   /**
    * Usuwa rekordy oznaczone jako do usunięcia : z bazy i tego obiektu
 	 * @return Table
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   protected function delete(){
 		try{
@@ -416,7 +416,7 @@ abstract class Table{
    * Odczyt z bazy danych na podstawie wcześniej spreparowanego zapytania.
    * Operacja czyści wewnętrzne tabele i inicjuje je wszystkie nowymi wartościami.
 	 * @return Table
-	 * @confirm 2014-10-21 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-21 Wprowadzenie preparowanych zapytań PDO
    */
   protected function read(){
     // @todo Pozostawić czyszczenie poprzez inicjowanie tabel czy przejżeć każdą i usunąć każdy jej element indywidualnie.
@@ -461,7 +461,7 @@ abstract class Table{
    * Wczytuje z bazy danych jeden rekord o podanyn identyfikatorze.
    * @param int $id - identyfikator rekordu który ma być odczytany
 	 * @return Table
-	 * @confirm 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   protected function readRow($id){
 		try{
@@ -480,7 +480,7 @@ abstract class Table{
   /**
    * Aktualizuje rekordy w bazie danych oznaczonych do aktualizacji na podstawie operacji wykonanych po załądowniu obecnego zestawu rekordów
 	 * @return Table
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   protected function update(){
 		try{
@@ -498,7 +498,7 @@ abstract class Table{
   }
 	/**
 	 * @param \pjpl\db\a\DependenceTableRecord $DI
-	 * @confirm 2014-10-17 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-17 Wprowadzenie preparowanych zapytań PDO
 	 */
 	protected function setDI($DI){
 		$DI->setTable($this);
@@ -518,8 +518,8 @@ abstract class Table{
 	 *
 	 * @param \Exception $E
 	 * @throws \Exception
-	 * @confirm 2014-10-30 Przepudowa obsługi wyjątków
-	 * @confirm 2014-10-21
+	 * @done 2014-10-30 Przepudowa obsługi wyjątków
+	 * @done 2014-10-21
 	 */
   final protected function catchAllTypeException(\Exception $E){
 		if ( is_a($E, 'E') ) {
@@ -539,7 +539,7 @@ abstract class Table{
 	}
 	/**
 	 * @param \PDOException $PDOException
-	 * @confirm 2014-10-30 Przepudowa obsługi wyjątków
+	 * @done 2014-10-30 Przepudowa obsługi wyjątków
 	 */
 	final protected function catchPDOException(\PDOException $PDOException){
 		$err = $this->LastPDOStatement->errorInfo();
@@ -566,7 +566,7 @@ abstract class Table{
 	/**
 	 * @param \pjpl\e\a\E $E
 	 * @throws \pjpl\e\a\E
-	 * @confirm 2014-10-30 Przepudowa obsługi wyjątków
+	 * @done 2014-10-30 Przepudowa obsługi wyjątków
 	 */
 	protected function catchE(\pjpl\e\a\E $E){
 		switch ( get_class($E) ){
@@ -577,7 +577,7 @@ abstract class Table{
 	/**
 	 * @param \Exception $E
 	 * @throws \Exception
-	 * @confirm 2014-10-30 Przepudowa obsługi wyjątków
+	 * @done 2014-10-30 Przepudowa obsługi wyjątków
 	 */
 	protected function catchException(\Exception $E){
 		switch ($E->getCode()){
@@ -587,19 +587,19 @@ abstract class Table{
 	}
 	/**
 	 * @param \pjpl\e\db\ForeignKey $ForeignKey
-	 * @confirm 2014-10-30 Przepudowa obsługi wyjątków
+	 * @done 2014-10-30 Przepudowa obsługi wyjątków
 	 */
 	protected function catchFreignKey(\pjpl\e\db\ForeignKey $ForeignKey){
 	}
 	/**
 	 * @param \pjpl\e\db\NotUnique $NotUnique
-	 * @confirm 2014-10-30 Przepudowa obsługi wyjątków
+	 * @done 2014-10-30 Przepudowa obsługi wyjątków
 	 */
 	protected function catchNotUnique(\pjpl\e\db\NotUnique $NotUnique){
 	}
 	/**
 	 * @param \PDOException $E
-	 * @confirm 2014-10-30 Przepudowa obsługi wyjątków
+	 * @done 2014-10-30 Przepudowa obsługi wyjątków
 	 */
 	protected function catchPDOOther(\PDOException $E){
 	}

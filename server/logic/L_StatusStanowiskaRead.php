@@ -3,9 +3,9 @@
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-15
- * @confirm 2014-12-15 Przebudowa Table do obsługi zapytań preparowanych
- * @confirm 2014-12-15 Duża przebudowa DependencyTableRecord
+ * @done 2014-12-15
+ * @done 2014-12-15 Przebudowa Table do obsługi zapytań preparowanych
+ * @done 2014-12-15 Duża przebudowa DependencyTableRecord
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */
 class L_StatusStanowiskaRead extends \crmsw\lib\a\BusinessLogic{

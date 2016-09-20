@@ -1,5 +1,5 @@
 /**
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  * @todo W menu lokalnym uruchomienie okna w którym widać wszystkie zadania przydzielone do tego stanowiska.
  */
 Ext.define('StanowiskaPrzydzialZadanGrid',{

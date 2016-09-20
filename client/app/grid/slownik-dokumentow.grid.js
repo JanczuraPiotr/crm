@@ -4,7 +4,7 @@
  * namespace client\app\grid
  * use client\app\store\SlownikDokumentowStore
  *
- * @confirm 2014-12-22
+ * @task 4.2.0
  */
 Ext.define('SlownikDokumentowGrid',{
 	extend : 'Ext.grid.Panel',

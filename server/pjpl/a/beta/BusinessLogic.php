@@ -103,7 +103,7 @@ use pjpl\e\a\E;
  * @package pjpl
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-20
+ * @done 2014-12-20
  * @doc 2014-09-17
  * @todo zaplanować obsługę wyjątków.
  * @todo wymusić operowanie na encjach zamiast tablicach atrybutów
@@ -113,7 +113,7 @@ abstract class BusinessLogic{
 	/**
 	 * @param DB $DB
 	 * @param Firewall $Firewall
-	 * @confirm 2014-09-16
+	 * @done 2014-09-16
 	 */
   function __construct($DB,$Firewall){
     $this->arguments = array();
@@ -129,7 +129,7 @@ abstract class BusinessLogic{
 	 * Gdy osiągnie koniec tablicy zwróci null.
 	 * @param array $in - Nazwa tablicy zawierającej zestaw danych wejściowych dla którego wygenerowano odpowiedz. Nie wymagane.
 	 * @return mixed Gdy nie było danej wejściowej zwraca NULL
-	 * @confirm 2014-09-16
+	 * @done 2014-09-16
 	 */
 	public function algorithm(& $in = NULL){
 		$ret = NULL;
@@ -146,7 +146,7 @@ abstract class BusinessLogic{
 	/**
 	 * Wykonuje Operacja na jednym zestawie danych wejściowych - zapisanych na jednej pozycji w tablicy wejściowej dataIn[]
 	 * @return mixed
-	 * @confirm 2014-09-12
+	 * @done 2014-09-12
 	 */
 	abstract protected function _algorithm(& $arguments);
 
@@ -172,7 +172,7 @@ abstract class BusinessLogic{
 	 * Pobierze tablicę _REQUEST, utworzy obiekt i zwróci jsona.
 	 * @param array $arguments tablica tablic asocjacyjnych w których kluczem jest nazwa zmiennej a wartością wartość tej zmiennej
 	 * @return json
-	 * @confirm 2014-09-16
+	 * @done 2014-09-16
 	 */
 	final public function externalCall(& $arguments){
 		$this->externalArguments($arguments);
@@ -184,7 +184,7 @@ abstract class BusinessLogic{
 	 *
 	 * Od metody externalParams różni się tym, że nie wykonuje kontroli danych wejściowych pod względem bezpieczeństwa.
 	 * @param array $arguments tablica tablic asocjacyjnych w których kluczem jest nazwa zmiennej a wartością wartość tej zmiennej
-	 * @confirm 2014-09-16
+	 * @done 2014-09-16
 	 */
 	public function internalArguments(& $arguments){
 		// @todo w tym miejscu : $this->input_arguments = array();
@@ -195,7 +195,7 @@ abstract class BusinessLogic{
    * Przekaż tablicę np: $_REQUEST do tej metody i tu dokonaj jej rozbioru na podstawowe dane i na ich podstawie utwórz parametry wejściowe.
 	 *
 	 * @param array $arguments tablica tablic asocjacyjnych w których kluczem jest nazwa zmiennej a wartością wartość tej zmiennej
-	 * @confirm 2014-09-16
+	 * @done 2014-09-16
    */
 	public function externalArguments(& $arguments){
 		// @todo w tym miejscu : $this->input_arguments = array();
@@ -208,7 +208,7 @@ abstract class BusinessLogic{
 	 * Powinna być wywołana po pobraniu danych wejściowych
 	 * Jeżeli inicjacja nie powiedzie się, musi zwrócić false.
 	 * @return bool
-	 * @confirm 2014-09-16
+	 * @done 2014-09-16
 	 */
 	public function init(){
 		$this->_init();
@@ -237,7 +237,7 @@ abstract class BusinessLogic{
 	 * ma być wykonywany na innych danych niż $this->dataPrepared[].
 	 * Gdy, każde wywołanie _algorithm() ma być objęte indywidualną transakcją należy to uwzględnić
 	 * wewnątrz metody _algorithm()
-	 * @confirm 2014-09-13
+	 * @done 2014-09-13
    */
   protected function _action(){
 		foreach ($this->dataPrepared as $key => $arguments) {
@@ -248,7 +248,7 @@ abstract class BusinessLogic{
 	 * Wykonuje logikę biznesową dla wszystkich danych wejściowych.
 	 *
 	 * Tylko wywołuje _action()
-	 * @confirm 2014-09-13
+	 * @done 2014-09-13
    */
   final public function action(){
 		$this->_action();
@@ -261,7 +261,7 @@ abstract class BusinessLogic{
 	/**
 	 * Dane jaki obiekt otrzymał do przetworzenia
 	 * @return array
-	 * @confirm 2014-09-17
+	 * @done 2014-09-17
 	 */
 	public function getArguments(){
 		return $this->arguments;
@@ -291,7 +291,7 @@ abstract class BusinessLogic{
 	 * Domyślnie zwraca tablicę danych wyjściowych.
 	 *
 	 * @return array
-	 * @confirm 2014-09-13
+	 * @done 2014-09-13
 	 */
 	public function getDataOut(){
 		return $this->dataOut;
@@ -299,7 +299,7 @@ abstract class BusinessLogic{
 	/**
 	 * Komunikat o ewentualmym błędzie błędzie. Ma sens gdy getSuccess() == false
 	 * @return string
-	 * @confirm 2014-09-13
+	 * @done 2014-09-13
 	 */
 	public function getOutMsg(){
 		return $this->return_msg;
@@ -307,7 +307,7 @@ abstract class BusinessLogic{
 	/**
 	 * Kod komunikatu o błędzie. Ma sens gdy getSuccess() == false.
 	 * @return int
-	 * @confirm 2014-09-13
+	 * @done 2014-09-13
 	 */
 	public function getOutCode(){
 		return $this->return_code;

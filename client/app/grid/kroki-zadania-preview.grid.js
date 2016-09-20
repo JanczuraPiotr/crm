@@ -3,7 +3,7 @@
  * Grid wyświetlający kroki zadania którego numer przekazany jest za pomocą zmiennej KrokiZadaniaGrid.setNrZadania(nr_zadania);
  * Kroki zadania wykonane przez inne stanowisko niż to które je przegląda wyświetlane są jako wyszarzałe.
  * Gdy ostatni krok zadania został wykonany przez inne stanowisko pracy niż to które je przegląda blokowane są przyciski do pracy z zadaniem.
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  * namespace client\app\grid
  */
 Ext.define('KrokiZadaniaPreviewGrid',{

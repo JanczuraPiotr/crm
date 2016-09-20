@@ -4,7 +4,7 @@ namespace crmsw\lib\db;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-09-09
+ * @done 2014-09-09
  */
 
 class DB extends \pjpl\db\DB{
@@ -118,7 +118,7 @@ class DB extends \pjpl\db\DB{
    * @param type $µs
    */
   public function doneCreating($tabela_id,$µs){
-		// @work 2014-01-01 Dokończ tak by kolumna "create" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
+		// @task 2014-01-01 Dokończ tak by kolumna "create" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
   }
   /**
    * Wywoływana zwrotnie gdy przez tabelę która skasowała rekord
@@ -126,7 +126,7 @@ class DB extends \pjpl\db\DB{
    * @param type $µs
    */
   public function doneDeleting($tabela_id,$µs){
-		// @work 2014-01-01 Dokończ tak by kolumna "update" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
+		// @task 2014-01-01 Dokończ tak by kolumna "update" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
   }
   /**
    * Wywoływana zwrotnie gdy tabelea uaktualniła rekord
@@ -134,7 +134,7 @@ class DB extends \pjpl\db\DB{
    * @param int $µs
    */
   public function doneUpdating($tabela_id,$µs){
-		// @work 2014-01-01 Dokończ tak by kolumna "delete" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
+		// @task 2014-01-01 Dokończ tak by kolumna "delete" tabeli "updates" rekordu o numerze $tabela_id była zaktualizowana wartością zmiennej $µs
   }
   /**
    * @return \AdministratorzyTable

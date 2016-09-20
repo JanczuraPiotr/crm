@@ -5,8 +5,8 @@ use crmsw\lib\a\BusinessLogic as BusinessLogic;
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-11-05 Przebudowa Table do obsługi zapytań preparowanych
- * @confirm 2014-10-20 Duża przebudowa DependencyTableRecord
+ * @done 2014-11-05 Przebudowa Table do obsługi zapytań preparowanych
+ * @done 2014-10-20 Duża przebudowa DependencyTableRecord
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */
 class L_OsobyPowiazaneRead extends BusinessLogic{

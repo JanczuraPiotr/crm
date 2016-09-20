@@ -40,7 +40,7 @@ namespace pjpl\i;
  *  $object->setEmpty();
  * </code>
  *
- * @confirm 2014-10-18 Utworzenie
+ * @done 2014-10-18 Utworzenie
  */
 interface NeverNull{
 	/**

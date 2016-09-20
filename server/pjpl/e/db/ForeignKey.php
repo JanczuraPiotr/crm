@@ -6,7 +6,7 @@ namespace pjpl\e\db;
  * @package pjpl
  * @subpackage exceptions
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-10-28
+ * @done 2014-10-28
  */
 class ForeignKey extends \pjpl\e\a\E{
 	/**

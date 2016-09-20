@@ -32,16 +32,19 @@ if( !isset($_SESSION['USER_STATUS']) /* || $_SESSION['USER_STATUS'] !== CRM::PRA
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
     <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0" />
     <meta http-equiv="Pragma" content="no-cache" />
+
+		<link href="ext/4.2/resources/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
+		<script src="ext/4.2/ext-all.js" ></script>
+		<script src="ext/4.2/locale/ext-lang-pl.js"></script>
+
+<!--
+		<link href="client/ext/5.1.0/resources/ext-all.css" rel="stylesheet" type="text/css" />
+		<script src="client/ext/5.1.0/ext-all.js" ></script>
+		<script src="client/ext/5.1.0/locale/ext-locale-pl.js"></script>
+-->
+
   </head>
   <body>
-<!--		<link href="ext/5.0.1/resources/ext-all.css" rel="stylesheet" type="text/css" />
-		<script src="ext/5.0.1/ext-all-debug.js" ></script>
-		<script src="ext/5.0.1/locale/ext-locale-pl.js"></script>-->
-
-		<link href="ext/5.1.0/resources/ext-all.css" rel="stylesheet" type="text/css" />
-		<script src="ext/5.1.0/ext-all.js" ></script>
-		<script src="ext/5.1.0/locale/ext-locale-pl.js"></script>
-
 		<script>
 				Ext.getBody().mask('Start panelu lidera grupy');
 		</script>

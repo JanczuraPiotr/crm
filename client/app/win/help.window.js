@@ -1,5 +1,5 @@
 /**
- * @confirm 2014-09-30
+ * @task 4.2.0
  */
  var HelpWindowSingleton = null;
 Ext.define('HelpWindow',{

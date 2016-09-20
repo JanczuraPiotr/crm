@@ -3,7 +3,7 @@
  * @package crmsw
  * @subpackage ajax
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-11-04
+ * @done 2014-11-04
  */
 require_once '../../config.php';
 if( !isset($_SESSION['USER_STATUS'])){
@@ -27,7 +27,7 @@ switch ($action) {
 //		$StatusZadaniaCreate->action();
 //		echo $StatusZadaniaCreate->getJson();
 //		break;
-	case 'read':// @confirm 2014-11-04
+	case 'read':// @done 2014-11-04
 		$StatusZadaniaRead = new \L_StatusZadaniaRead();
 		$StatusZadaniaRead->fromRequest($_REQUEST);
 		$StatusZadaniaRead->action();

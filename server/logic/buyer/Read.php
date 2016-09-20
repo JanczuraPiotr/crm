@@ -6,7 +6,7 @@ use pjpl\db\Where;
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-15 Przebudowa Table do obsługi zapytań preparowanych
+ * @done 2014-12-15 Przebudowa Table do obsługi zapytań preparowanych
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  *
  */

@@ -4,7 +4,7 @@
  * namespace  \app\win\zarzad
  * use client\app\panel\NadzorNadZadaniamiPanel
  * use client\app\panel\zarzad\WyborStanowiskaPracyPanel
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  */
 Ext.define('NadzorNadZadaniamiStanowiskWindow',{
 	extend : 'Ext.window.Window',

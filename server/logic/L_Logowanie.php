@@ -2,8 +2,8 @@
 use crmsw\lib\a\BusinessLogic;
 use pjpl\db\Where;
 /**
- * @confirm 2014-10-19 Przebudowa Table do obsługi zapytań preparowanych
- * @confirm 2014-10-19 Duża przebudowa DependencyTableRecord
+ * @done 2014-10-19 Przebudowa Table do obsługi zapytań preparowanych
+ * @done 2014-10-19 Duża przebudowa DependencyTableRecord
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */
 class L_Logowanie extends BusinessLogic{

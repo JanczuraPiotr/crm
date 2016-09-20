@@ -2,7 +2,7 @@
  * Wyświetla stanowiska z zatrudnionymi pracownikami na podległych stanowiskach.
  * Jeżeli ustawiona jest wartość zmiennej lider_id to wyszuka stanowiska podległe temu liderowi.
  * Jeżeli zmienna lider_id < 1 to po uznawane jest że chodzi o zespół pracownika z konta którego wykonywany jest test.
- * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @task 4.2.0
  */
 Ext.define('StanowiskaZespoluGrid',{
 	extend : 'Ext.grid.Panel',

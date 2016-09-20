@@ -3,7 +3,7 @@
  * @package crmswsw
  * @subpackage config
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-08-28
+ * @done 2014-08-28
  */
 @session_start();
 

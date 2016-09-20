@@ -5,7 +5,7 @@ namespace pjpl\e;
  * @package pjpl
  * @subpackage exceptions
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-09-08
+ * @done 2014-09-08
  */
 class NoRecord extends \pjpl\e\a\E{
 	/**

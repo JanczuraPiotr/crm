@@ -1,6 +1,6 @@
 /**
  * Grid wyświetlający oddziały firmy której identyfikator istawia metoda setFirmaId().
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  */
 Ext.define('FirmyOddzialyMinGrid',{
 	extend : 'Ext.grid.Panel',

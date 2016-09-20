@@ -3,7 +3,7 @@ namespace pjpl\e;
 use pjpl\e\a\E;
 /**
  * Próba odwołania do nieistniejącego atrybutu Encji
- * @confirm 2014-09-17
+ * @done 2014-09-17
  */
 class NoExistAttribute extends E{
 	/**

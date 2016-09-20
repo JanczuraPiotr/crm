@@ -13,7 +13,7 @@ use pjpl\db\Where;
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-20
+ * @done 2014-12-20
  * @doc 2014-12-20
  */
 class UnthinkingGenerator extends BusinessLogic{
@@ -61,7 +61,7 @@ class UnthinkingGenerator extends BusinessLogic{
     $this->tZadania = $this->DB->tableZadania();
     $this->tZadaniaFirmy = $this->DB->tableZadaniaFirmy();
 
-		// @confirm 2014-09-02
+		// @done 2014-09-02
 		// Atomatycznie przypisuje generowane zadania tylko do stanowiska pracownika gdy zadanie było generowane przez pracownika.
 		if(isset($_SESSION['USER_STATUS'])){
 			switch ((int)$_SESSION['USER_STATUS']){
@@ -78,7 +78,7 @@ class UnthinkingGenerator extends BusinessLogic{
 					$this->stanowisko_id = null;
 			}
 		}
-		// @confirm 2014-09-02t0
+		// @done 2014-09-02t0
 		// Komunikat o sposobie utworzenia zadania.
 		if(isset($_SESSION['USER_STATUS'])){
 			switch ((int)$_SESSION['USER_STATUS']){

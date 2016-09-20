@@ -10,8 +10,8 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-16
- * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @done 2014-12-16
+ * @task 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
  */
 class Administrator extends Encja{
 	public static function nullRow() {
@@ -86,7 +86,7 @@ class AdministratorzyTable extends Table{
    * Usuwa rekordy oznaczone jako do usunięcia : z bazy i tego obiektu.
 	 * Metodę nadpisano by uniemożliwić usunięcie superadministratora.
 	 * @return Table
-	 * @work 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @task 2014-10-14 Wprowadzenie preparowanych zapytań PDO
    */
   protected function delete(){
 		try{

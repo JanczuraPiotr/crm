@@ -1,7 +1,8 @@
 /**
  * Zespół kontrolek do pracy z zadaniami jednego klienta.
  * Dane klienta należy podać jako obiekt Model przekazany w obiekcie konfiguracyjnym pod zmienną recKlient
- * @confirm 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
+ * @done 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
+ * @task 4.2.0
  */
 Ext.define('ZadaniaProcedowaneKlientaPanel',{
 	extend : 'Ext.panel.Panel',
@@ -31,7 +32,7 @@ Ext.define('ZadaniaProcedowaneKlientaPanel',{
 			recKlient : config.recKlient
 		});
 
-		// @confirm 2014-08-22
+		// @done 2014-08-22
 		// @todo 1 Dodać możliwość wyboru czy stanowisko będzie obserwować zadania wszystkie czy tylko te za które odpowiada lub dodać informację do każdego zadania kto za nie odpowiada.
 		// Skoro zadania są przeglądane z perspektywy klienta to każdy pracownik powinien mieć możliwość obejżenia wszystkich zadań nie zależnie od tego czy jest odpowidzialny za to zadanie.
 		// def.setStanowiskoId(CRM.stanowisko_id);

@@ -10,8 +10,8 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-11-05 Duża przebudowa DependencyTableRecord
- * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @done 2014-11-05 Duża przebudowa DependencyTableRecord
+ * @task 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
  */
 class ZadanieDokument extends Encja{
 	public function __get($attribute) {

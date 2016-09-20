@@ -1,8 +1,8 @@
 /**
- * @work 2014-10-30 Zamiana response.ret >>> response.code
- * @work 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
- * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
- * @confirm 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
+ * @task 2014-10-30 Zamiana response.ret >>> response.code
+ * @task 2014-10-30 Dodanie do response tablicy "err" informącej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
+ * @task 4.2.0
+ * @done 2014-09-04 Zmiana znaczenia dat i sposobu notowania wykonywanych kroków.
  */
 Ext.define('GeneratorZadanStore',{
 	extend : 'Ext.data.Store',

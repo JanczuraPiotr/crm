@@ -3,7 +3,7 @@
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-22
+ * @done 2014-12-22
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */
 class L_DokumentySlownikRead extends \crmsw\lib\a\BusinessLogic{

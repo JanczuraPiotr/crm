@@ -7,8 +7,8 @@ use pjpl\i\NeverNull;
  * @package pjpl
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-10-20 Wprowadzenie preparowanych zapytań PDO
- * @confirm 2014-09-26 Filtr może składać się tylko z wyrażeń : ['attribute' => 'zmienna_lub_koluma_bazy', 'operator' => 'jeden z : <, >, =, like', 'value' => 'szukana_wartosc'];
+ * @done 2014-10-20 Wprowadzenie preparowanych zapytań PDO
+ * @done 2014-09-26 Filtr może składać się tylko z wyrażeń : ['attribute' => 'zmienna_lub_koluma_bazy', 'operator' => 'jeden z : <, >, =, like', 'value' => 'szukana_wartosc'];
  * @todo Nie obsługuje zapisu typu zamienn = null albo zmienna != null
  * @doc 2014-10-14
  */
@@ -53,7 +53,7 @@ class Where implements NeverNull{ // @todo ten interfejs nie spełnia tu założ
 	 * @param string $operator - operator stawiany między $attrybut a $value
 	 * @param string $value operant stojący po prawej stronie attrybutu w takich przypadkach jak attrybut <= 5 lub attrybut != 5
 	 * @return Where
-	 * @confirm 2014-10-20 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-20 Wprowadzenie preparowanych zapytań PDO
 	 */
 	public function append($attribute, $operator, $value){
 		switch ($operator = strtoupper($operator)){
@@ -76,7 +76,7 @@ class Where implements NeverNull{ // @todo ten interfejs nie spełnia tu założ
 	/**
 	 * Zwraca string warunku WHERE spreparowanego zgodnie z zasadami PDO
 	 * @return string
-	 * @confirm 2014-10-20 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-20 Wprowadzenie preparowanych zapytań PDO
 	 */
 	public function getPrepareStatement(){
 		if(count($this->expressions) === 0){
@@ -91,7 +91,7 @@ class Where implements NeverNull{ // @todo ten interfejs nie spełnia tu założ
 	/**
 	 * Zwraca tablicę preparowanych, zmiennych zapytania i ich wartości. Preparowanie odbywa się zgodnie z zasadami PDO
 	 * @return array
-	 * @confirm 2014-10-20 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-20 Wprowadzenie preparowanych zapytań PDO
 	 */
 	public function getPrepareParams(){
 		$array = [];
@@ -116,7 +116,7 @@ class Where implements NeverNull{ // @todo ten interfejs nie spełnia tu założ
 	 * Obraz fragmentu zapytania generowanego przez obiekt.
 	 * pjpl nie przewiduje stosowania tej metody w tabelach. Metoda istnieje dla ułatwienia testowania poprawności warunku podczas debugowania.
 	 * @return string
-	 * @confirm 2014-10-14 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-14 Wprowadzenie preparowanych zapytań PDO
 	 */
 	public function getString(){
 		if(count($this->expressions) === 0){
@@ -140,7 +140,7 @@ class Where implements NeverNull{ // @todo ten interfejs nie spełnia tu założ
 	 * @param type $where
 	 * @param type $expression
 	 * @return \pjpl\db\Where
-	 * @confirm 2014-10-20 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-20 Wprowadzenie preparowanych zapytań PDO
 	 */
 	protected function mergeStatement(& $where, & $expression){
 		if(strlen($where) > 0){
@@ -155,7 +155,7 @@ class Where implements NeverNull{ // @todo ten interfejs nie spełnia tu założ
 	 * @param string $where dotychczas utworzona część klauzuli where
 	 * @param string $expression tablica opisująca kolejne podzapytanie które ma być doklejone do $where
 	 * @return Where
-	 * @confirm 2014-10-20 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-20 Wprowadzenie preparowanych zapytań PDO
 	 */
 	protected function mergeString(& $where, & $expression){
 		if(strlen($where) > 0){
@@ -169,7 +169,7 @@ class Where implements NeverNull{ // @todo ten interfejs nie spełnia tu założ
 	 * Przetwarza na string jeden wiersz tablicy $expressions
 	 * @param array $expression wygląda tak [$attrybut,$operator,$value]
 	 * @return string jedna składowa warunku np : `miejscowosc` = :miejscowosc' lub `miejscowosc` like :miejscowosc%
-	 * @confirm 2014-10-20 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-20 Wprowadzenie preparowanych zapytań PDO
 	 */
 	protected function conditionStatement(& $expression){
 		$string = '';
@@ -192,7 +192,7 @@ class Where implements NeverNull{ // @todo ten interfejs nie spełnia tu założ
 	 * Przetwarza na string jeden wiersz tablicy $expressions
 	 * @param array $expression wygląda tak [$attrybut,$operator,$value]
 	 * @return string jedna składowa warunku np : `miejscowosc` = 'Katowice' lub `miejscowosc` like 'Katow%'
-	 * @confirm 2014-10-20 Wprowadzenie preparowanych zapytań PDO
+	 * @done 2014-10-20 Wprowadzenie preparowanych zapytań PDO
 	 */
 	protected function conditionString(& $expression){
 		$string = '';

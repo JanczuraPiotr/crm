@@ -10,7 +10,7 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @task 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
  */
 class Zadanie extends Encja{
 	public function __get($attribute) {
@@ -67,7 +67,7 @@ class Zadanie extends Encja{
 				break;
 
 			case 'data_next_step':
-				// @confirm 2014-09-03 Zabroniłem wstawiać pustą wartość dla data_next_step i w takim przypadku wstawiam data('Y-m-d')
+				// @done 2014-09-03 Zabroniłem wstawiać pustą wartość dla data_next_step i w takim przypadku wstawiam data('Y-m-d')
 				if($value === null){
 					$DateTime = new \DateTime();
 					$DateTime->add(new \DateInterval('P1D'));

@@ -5,7 +5,7 @@
  *			int : identyfikator stanowiska do którego przydzielono zadania.
  *			[]  : identyfikatory przydzielonych zadań
  *
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  */
 Ext.define('PrzydzialZadanGrid',{
 	extend : 'Ext.grid.Panel',

@@ -1,5 +1,5 @@
 /**
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  */
 Ext.define('PrzydzialZadanWindow',{
   xtype : 'przydzial-zadan-window',

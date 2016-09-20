@@ -4,7 +4,7 @@
  * namespace client\app\view
  * use client\app\store\ZadaniaOpiosStore
  *
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  */
 Ext.define('AktaSprawyView',{
 	extend : 'Ext.view.View',

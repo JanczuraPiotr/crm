@@ -12,7 +12,7 @@
  * use client\app\view\StanowiskaMiniGrid
  * use client\app\view\FirmyOddzialyMinGrid
  *
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  */
 Ext.define('WyborStanowiskaPracyPanel',{
 	extend : 'Ext.panel.Panel',

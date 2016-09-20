@@ -1,8 +1,8 @@
 /**
  * Zespół kontrolek do pracy z zadaniami przypisanymi do stanowiska
  * Dane klienta należy podać jako obiekt Model przekazany w obiekcie konfiguracyjnym pod zmienną recKlient
- * @confirm 2014-08-28
- * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @done 2014-08-28
+ * @task 4.2.0
  */
 Ext.define('PracaZZadaniamiPanel',{
 	extend : 'Ext.panel.Panel',

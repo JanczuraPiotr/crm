@@ -6,7 +6,7 @@
  * use client\app\view\KrokiZadaniaPreviewGrid
  * use client\app\view\ZadaniaNaglowekMiniGrid
  *
- * @confirm 2015-01-02 ExtJS 5.1.0
+ * @task 4.2.0
  */
 Ext.define('NadzorNadZadaniamiPanel',{
 	extend : 'Ext.panel.Panel',

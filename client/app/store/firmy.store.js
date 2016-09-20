@@ -1,5 +1,5 @@
 /**
- * @confirm 2014-12-31
+ * @work 4.2.0
  */
 Ext.define('FirmyStore',{
 	extend : 'Ext.data.Store',
@@ -12,6 +12,7 @@ Ext.define('FirmyStore',{
 	constructor : function(){
 		this.superclass.constructor.call(this,arguments);
 		this.proxy.def = this;
+		console.log('FirmyStore::constructor');
 	},
 
 	listeners : {
@@ -20,10 +21,12 @@ Ext.define('FirmyStore',{
 					records,
 					recIndex,
 					recStore;
-
-			switch(operation.getRequest().getAction()){
+			console.log('FirmyStore::listenets:write()');
+			console.log(operation);
+			switch(operation.action){
 				case 'create':
 					records = operation.getRecords();
+					console.log(records);
 					for( record in records ){
 						recIndex = store.find('tmpId',records[record].data.tmpId);
 						recStore = store.getAt(recIndex);
@@ -31,9 +34,16 @@ Ext.define('FirmyStore',{
 						delete recStore.data.tmpId;
 					}
 					break;
+				case 'update':
+					records = operation.getRecords();
+					console.log(records);
+					for( record in records ){
+					}
+					break;
 			}
 		},
 		beforesync: function(options,eOpts){
+			console.log('FirmyStore::beforesync | start');
 			for(var action in options){
 				switch(action){
 					case 'create':
@@ -77,7 +87,7 @@ Ext.define('FirmyStore',{
 						def = proxy.def,
 						key;
 
-				switch(operation.getRequest().getAction()){
+				switch(operation.action){
 					case 'create':
 					case 'update':
 						if(resp.code === E.code.OK){
@@ -118,13 +128,13 @@ Ext.define('FirmyStore',{
 		writer : {
 			writeAllFields : false,
 			allowSingle : false,
-			rootProperty : 'data'
+			root : 'data'
 		},
 
 		reader : {
 			type : 'json',
-			rootProperty : 'data',
-			totalProperty : 'countTotal'
+			root : 'data',
+			total : 'countTotal'
 		}
 
 	}

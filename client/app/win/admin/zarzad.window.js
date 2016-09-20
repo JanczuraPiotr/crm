@@ -1,5 +1,8 @@
 /**
- * @confirm 2014-12-31
+ * Wskazanie prezesa z pośród pracowników firmy.
+ * Edycja loginu i hasła pracownika.
+ *
+ * @work 4.2.0
  */
 Ext.define('ZarzadWindow',{
 	extend : 'Ext.window.Window',

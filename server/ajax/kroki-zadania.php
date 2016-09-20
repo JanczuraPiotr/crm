@@ -4,7 +4,7 @@ namespace crmsw\ajax;
  * @package crmsw
  * @subpackage ajax
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-08-28
+ * @done 2014-08-28
  */
 require_once '../../config.php';
 if( ! isset($_SESSION['USER_STATUS'])){

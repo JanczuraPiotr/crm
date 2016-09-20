@@ -10,8 +10,8 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @work 2014-10-18 Duża przebudowa DependencyTableRecord
- * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @task 2014-10-18 Duża przebudowa DependencyTableRecord
+ * @task 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
  */
 class Zatrudnienie extends Encja{
   /**
@@ -90,7 +90,7 @@ class ZatrudnieniaTable extends Table{
 	 * @param int $stanowisko_id
 	 * @param date $data
 	 * @return Pracownkk || null
-	 * @confirm 2014-09-03
+	 * @done 2014-09-03
 	 */
 	public function getPracownikNaStanowikuWDniu($stanowisko_id, $data){
 		if(empty($stanowisko_id) || empty($data) ){

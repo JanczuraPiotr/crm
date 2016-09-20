@@ -10,8 +10,8 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
- * @work 2014-10-18 Duża przebudowa DependencyTableRecord
+ * @task 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @task 2014-10-18 Duża przebudowa DependencyTableRecord
  * @todo Status klienta powinien być usunięty a status ma być nadawany zadaniom jakie są klientowi przydzielone. Jeżeli klient nie życzy sobie żadnych ofert to jego data_do powinna być ustawiona
  */
 class KlientStatus extends Encja{

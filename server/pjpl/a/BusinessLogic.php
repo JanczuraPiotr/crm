@@ -6,7 +6,7 @@ use pjpl\Firewall;
  * @package pl.janczura.piotr (pjpl)
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-20
+ * @done 2014-12-20
  * @doc 2014-10-28
  */
  // @todo Przebudować a ewentualnie usunąć z interfejsu obsługę transakcji
@@ -67,7 +67,7 @@ abstract class BusinessLogic{
 	 *
 	 * @param \Exception $E
 	 * @throws Exception | PDOException | E
-	 * @cofirm 2014-10-30 Przepudowa obsługi wyjątków
+	 * @done 2014-10-30 Przepudowa obsługi wyjątków
 	 * @todo 2014-10-30 Przenieść do beta\BusinessLogic
 	 */
   final protected function catchActionException($E){
@@ -93,7 +93,7 @@ abstract class BusinessLogic{
 	 * Pokrywająć metodę można reagować na błędy w poszczególnych rekordach co nie zaburzy przetwarzania pozostałych zestawów danych
 	 * @param \Exception $E
 	 * @throws \Exception
-	 * @confirm 2014-10-30 Przepudowa obsługi wyjątków
+	 * @done 2014-10-30 Przepudowa obsługi wyjątków
 	 * @todo 2014-10-30 Zaimplementować do beta\BusinessLogic
 	 */
 	final protected function catchLogicException(\Exception $E){
@@ -132,7 +132,7 @@ abstract class BusinessLogic{
 	/**
 	 * @param \pjpl\e\a\E $E
 	 * @throws \pjpl\e\a\E
-	 * @confirm 2014-10-30 Przebudowa obsługi wyjątków
+	 * @done 2014-10-30 Przebudowa obsługi wyjątków
 	 */
 	final protected function catchE(\pjpl\e\a\E $E){
 		$this->return_code = $E->getExceptionCode();
@@ -140,7 +140,7 @@ abstract class BusinessLogic{
 	}
 	/**
 	 * @param \Exception $E
-	 * @confirm 2014-10-30 Przebudowa obsługi wyjątków
+	 * @done 2014-10-30 Przebudowa obsługi wyjątków
 	 */
 	protected function catchException(\Exception $E){
 		$this->return_code = \pjpl\e\a\E::UNKNOWN;
@@ -149,7 +149,7 @@ abstract class BusinessLogic{
 
 	/**
 	 * @param \pjpl\e\db\General $DBGeneral
-	 * @confirm 2014-10-30 Przebudowa obsługi wyjątków
+	 * @done 2014-10-30 Przebudowa obsługi wyjątków
 	 */
 	protected function catchDBGeneral(\pjpl\e\db\General $DBGeneral){
 		$this->return_code = $DBGeneral->getExceptionCode();
@@ -157,13 +157,13 @@ abstract class BusinessLogic{
 	}
 	/**
 	 * @param \pjpl\e\db\ForeignKey $E
-	 * @confirm 2014-10-30 Przebudowa obsługi wyjątków
+	 * @done 2014-10-30 Przebudowa obsługi wyjątków
 	 */
 	protected function catchForeignKey(\pjpl\e\db\ForeignKey $E){
 	}
 	/**
 	 * @param \pjpl\e\db\NotUnique $E
-	 * @confirm 2014-10-30 Przebudowa obsługi wyjątków
+	 * @done 2014-10-30 Przebudowa obsługi wyjątków
 	 */
 	protected function catchNotUnique(\pjpl\e\db\NotUnique $E){
   }

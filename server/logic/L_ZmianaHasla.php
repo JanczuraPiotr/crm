@@ -4,8 +4,8 @@ use pjpl\db\Where;
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-10-19 Przebudowa Table do obsługi zapytań preparowanych
- * @confirm 2014-10-19 Duża przebudowa DependencyTableRecord
+ * @done 2014-10-19 Przebudowa Table do obsługi zapytań preparowanych
+ * @done 2014-10-19 Duża przebudowa DependencyTableRecord
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */
 class L_ZmianaHasla extends \crmsw\lib\a\BusinessLogic{

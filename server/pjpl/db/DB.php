@@ -6,7 +6,7 @@ namespace pjpl\db;
  * @package pl.janczura.piotr
  * @subpackage database
  * @author <piotr@janczura.pl>
- * @confirm 2013-11-05 - Zniana CDB na CDBmysql i utworzenie nowego DB z obsługą \PDO
+ * @done 2013-11-05 - Zniana CDB na CDBmysql i utworzenie nowego DB z obsługą \PDO
  */
 class DB extends \PDO{
   /**

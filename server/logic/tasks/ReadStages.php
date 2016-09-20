@@ -7,7 +7,7 @@ use pjpl\db\Where
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-09-22
+ * @done 2014-09-22
  */
 class ReadStages extends BusinessLogic{
   public function __construct() {

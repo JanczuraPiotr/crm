@@ -7,7 +7,7 @@ use crmsw\lib\a\BusinessLogic;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-09-22
+ * @done 2014-09-22
  */
 class TransferFromLeaderToSubordinate extends BusinessLogic{
   public function __construct() {

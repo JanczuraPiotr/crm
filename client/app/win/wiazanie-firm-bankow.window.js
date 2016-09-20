@@ -1,6 +1,6 @@
 /**
  * @deprecated Prawdopodobnie używana jest tylko klasa z katalogu dla zarządu
- * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * @task 4.2.0
  */
 Ext.define('WiazanieFirmBankowWindow',{
 	extend : 'Ext.window.Window',

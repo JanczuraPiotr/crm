@@ -25,7 +25,7 @@ use pjpl\db\a\Table;
  *
  * </code>
  * @see Encja
- * @confirm 2014-09-11
+ * @done 2014-09-11
  * @doc 2014-10-14
  */
 class Record{

@@ -1,5 +1,5 @@
 /**
- * @confirm 2014-12-29 extjs 5.1.0
+ * @task 4.2.0
  */
 Ext.define('FirmyOddzialyStore',{
 	extend : 'Ext.data.Store',

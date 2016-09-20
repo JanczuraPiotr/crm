@@ -9,7 +9,7 @@ use crmsw\lib\db\a\Table;
  * @package crmsw
  * @subpackage lib
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-16
+ * @done 2014-12-16
  */
 class Record extends \pjpl\db\Record{
 	/**

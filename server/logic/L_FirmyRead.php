@@ -3,7 +3,7 @@
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-15
+ * @done 2014-12-15
  * @todo Kasowanie rekordu zablokowanego kluczem podrzędnym powinna ustawić data_do na null
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */

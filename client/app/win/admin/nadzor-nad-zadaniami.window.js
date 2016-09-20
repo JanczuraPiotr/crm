@@ -4,7 +4,7 @@
  * namespace client\app\win\admin
  * use client\app\view\NadzorNadZadaniamiPanel
  * use client\app\panel\admin\WyborStanowiskaPracyPanel
- * @confirm 2014-09-04
+ * @task 4.2.0
  * @err Zmiana firmy powinna czyścić wszystkie widoki zależne od oddziału firmy
  */
 Ext.define('NadzorNadZadaniamiWindow',{

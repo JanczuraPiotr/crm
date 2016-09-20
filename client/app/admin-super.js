@@ -1,5 +1,7 @@
 /**
- * @work 2014-09-24 extjs 4.2.2 >> extjs 5.0.1
+ * Panel superadministratora.
+ *
+ * @done 4.2.0
  */
 Ext.onReady(function(){
 	Ext.tip.QuickTipManager.init();
@@ -24,7 +26,7 @@ Ext.onReady(function(){
         text : 'Zarządzaj',
         menu : [
           {
-						text : 'firmy',
+						text : 'Dodaj, edytuj, usuń : firmę',
 						handler : function(){
 							try{
 								Firmy.show().expand();
@@ -35,6 +37,7 @@ Ext.onReady(function(){
 									items : [
 										new Ext.create('FirmyGrid')
 									],
+									resizable : false,
 									listeners : {
 										close : function(){
 											delete Firmy;
@@ -44,7 +47,7 @@ Ext.onReady(function(){
 							}
 						}
 					},{
-						text : 'prezesi firm',
+						text : 'Zarządzaj prezesami firm',
 						handler : function(){
 							if(ZarzadWindow === null){
 								ZarzadWindow = new Ext.create('ZarzadWindow').show();
@@ -101,9 +104,4 @@ Ext.onReady(function(){
 			}
     ]
   });
-//	Ext.getBody().unmask();
-//  var AdminZwyklyGrid = Ext.create('AdminZwyklyGrid').render();
-//  var PanelAdminSuper = Ext.create('AdminSuperTabs').render(Ext.getBody());
-
-
 });

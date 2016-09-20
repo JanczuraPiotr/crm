@@ -3,7 +3,7 @@
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-16
+ * @done 2014-12-16
  * @todo \pjpl\a\BusinessLogic <<< \crmsw\lib\a\BusinessLogic z usunięciem dziesdziczenia po klasie ...\beta\BusinessLogic
  */
 class L_AdministratorzyRead extends \crmsw\lib\a\BusinessLogic{

@@ -1,4 +1,5 @@
 /**
+ * @task 4.2.0
  */
 Ext.define('NadzorNadZadaniamiKlientowWindow',{
 	extend : 'Ext.window.Window',

@@ -6,7 +6,7 @@ use crmsw\lib\a\BusinessLogic;
  * @package crmsw
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @confirm 2014-12-16
+ * @done 2014-12-16
  */
 class CreateDescription extends BusinessLogic{
  public function __construct() {

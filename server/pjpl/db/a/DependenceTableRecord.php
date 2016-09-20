@@ -6,7 +6,7 @@ use pjpl\db\Record;
 use pjpl\db\a\Table;
 /**
  * Zależności dla danego typy tabeli bazy danych
- * @confirm 2014-12-19
+ * @done 2014-12-19
  * @doc 2014-10-14
  */
 abstract class DependenceTableRecord{

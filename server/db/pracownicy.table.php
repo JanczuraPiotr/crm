@@ -10,9 +10,9 @@ use crmsw\lib\db\Record;
  * @package crmsw
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @work 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
- * @work 2014-10-18 Duża przebudowa DependencyTableRecord
- * @confirm 2014-08-27 Rzutowanie zmiennych inicjujących int w metodach set...
+ * @task 2014-10-10 Przenieść kontrolę attrybutów do __set() i __get()
+ * @task 2014-10-18 Duża przebudowa DependencyTableRecord
+ * @done 2014-08-27 Rzutowanie zmiennych inicjujących int w metodach set...
  */
 class Pracownik extends Encja{
 	public function getFirmaId(){

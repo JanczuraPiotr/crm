@@ -4,7 +4,7 @@
  * namespace client\app\window
  * use client\app\grid\SlownikDokumentowGrid
  * 
- * @confirm 2014-12-22
+ * @task 4.2.0
  */
 Ext.define('SlownikDokumentowWindow',{
 	xtype : 'slownik-dokumentow-window',

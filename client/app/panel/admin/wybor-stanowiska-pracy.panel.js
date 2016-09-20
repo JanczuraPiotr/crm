@@ -5,7 +5,7 @@
  * Klasa definiuje zdarzenia:
  *	- selectworkplace którego parametrem jest identyfikator oznaczonego stanowiska pracy : stanowisko_id
  *	-	deselectworkplace którego parametrem jest identyfikator stanowiska które utrzaciło zaznaczenie : stanowisko_id
- * @confirm 2014-08-30
+ * @task 4.2.0
  * namespace client\app\panel\admin
  * use client\app\view\StanowiskaMiniGrid
  * use client\app\view\FirmyOddzialyMinGrid

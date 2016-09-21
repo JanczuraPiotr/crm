@@ -39,7 +39,7 @@ abstract class DependenceTableRecord extends \pjpl\db\a\DependenceTableRecord{
 	 * @param int $µs
 	 * @return type
 	 */
-	public function prepareParamsUpdate(Record $Record, $µs){
+	public function prepareParamsUpdatesUs(Record $Record, $µs){
 		$prepare = [];
 		foreach ($Record->toArray() as $key => $value) {
 			$prepare[':'.$key] = $value;

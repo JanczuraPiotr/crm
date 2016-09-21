@@ -42,7 +42,7 @@ class DB extends \PDO{
    * @param string $dbpass - hasło użytkownika
    * @throw \E\PDOException  - nie nawiązano połączenia z bazą danych
    */
-  public static function init($dbtype,$dbhost,$dbname,$dbport,$dbuser,$dbpass){
+  public static function init($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass, $user_group = null, $charset = null, $used_tables=null){
     if(self::$instance === null){
       self::$instance = new DB($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass);
     }

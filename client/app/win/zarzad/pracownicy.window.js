@@ -27,6 +27,7 @@ Ext.define('PracownicyWindow', {
 		});
 		def.callParent();
 	},
+	
 	listeners : {
 		close : function(panel, eOpts){
 			PracownicyWindow = null;

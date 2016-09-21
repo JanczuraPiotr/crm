@@ -8,6 +8,19 @@ Ext.define('GeneratorZadanGrid',{
 	constructor : function(){
 	  var def = this;
 		def.ProduktyStore = new Ext.create('ProduktyStore');
+		def.RowExpander = Ext.create('Ext.grid.plugin.RowExpander',{
+			selectRowOnExpand : true,
+			expandOnDblClick : true,
+			expandOnEnter : true,
+			rowBodyTpl : [
+							'<p>',
+								'<b>Opis : </b>{opis}',
+							'</p>'
+			]
+		});
+		def.plugins = [
+			def.RowExpander
+		];
 		def.callParent(arguments);
 	},
 
@@ -49,16 +62,9 @@ Ext.define('GeneratorZadanGrid',{
 					}
 				], // bbar
 
-				plugins:[
-					{
-						ptype : 'rowexpander',
-						rowBodyTpl : [
-							'<p>',
-								'<b>Opis : </b>{opis}',
-							'</p>'
-						]
-					}
-				]
+//				plugins:[
+//					def.rowExpander
+//				]
 
 		});
 		def.callParent();
@@ -66,7 +72,7 @@ Ext.define('GeneratorZadanGrid',{
 
 	setNazwa : function(nazwa){
 		var def = this;
-		def.setTitle('Prodykty banku : '+nazwa);
+		def.setTitle('Produkty banku : '+nazwa);
 	},
 	setBankId : function(bank_id){
 		var def = this;

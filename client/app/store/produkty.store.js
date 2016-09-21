@@ -1,7 +1,7 @@
-/**
+	/**
  * @task 2014-10-30 Zamiana response.ret >>> response.code
  * @task 2014-10-30 Dodanie do response tablicy "err" informującej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
- * @task 4.2.0
+ * @work 4.2.0
  */
 Ext.define('ProduktyStore',{
 	extend : 'Ext.data.Store',
@@ -14,14 +14,14 @@ Ext.define('ProduktyStore',{
 	idProperty : 'id',
 
 	constructor : function(){
-		thisPS = this; // @todo usun zmienną globalną thisPS = this >> var def = this
-		thisPS.bank_id = 0;
-		thisPS.superclass.constructor.call(this,arguments);
+		var def = this; // @todo usun zmienną globalną thisPS = this >> var def = this
+		def.bank_id = 0;
+		def.superclass.constructor.call(this,arguments);
 	},
 
 	listeners : { //ProduktyStore::listenets
 		write : function(store,operation,eOpts){
-			var thisPS = this;
+			var listener = this;
 			switch(operation.action){
 				case 'create':
 					for(var record in operation.records){
@@ -30,7 +30,7 @@ Ext.define('ProduktyStore',{
 						recStore.data.id = operation.records[record].data.id;
 						delete recStore.data.tmpId;
 					}
-					thisPS.onWriteCreate(store,operation,eOpts);
+					listener.onWriteCreate(store,operation,eOpts);
 					break;
 				case 'read':
 					break;
@@ -41,7 +41,8 @@ Ext.define('ProduktyStore',{
 			}
 		},
 		beforesync: function(options,eOpts){
-			if(thisPS.bank_id === 0){
+			var listener = this;
+			if(listener.bank_id === 0){
 				console.log('ProduktyStore::listeners::beforesync -> podłącz produkt do banku');
 				return false;
 			}
@@ -97,7 +98,7 @@ Ext.define('ProduktyStore',{
 										Ext.Msg.alert('Błąd !','<hr>Nie udało się dodać banku. <hr> Prawdopodobny powód : <br> podano symbol lub nazwę zapisane już w bazie, <hr>Proszę nadać unikalne wartości');
 										break;
 								}
-								thisPS.rejectChanges();
+								def.rejectChanges();
 								break;
 						}
 
@@ -109,7 +110,7 @@ Ext.define('ProduktyStore',{
 										Ext.Msg.alert('Błąd !','Nie udało się usunąć banku z powodu zalenych od niej rekordów w bazie');
 										break;
 								}
-								thisPS.rejectChanges();
+								def.rejectChanges();
 								break;
 						}
 						break;
@@ -121,7 +122,7 @@ Ext.define('ProduktyStore',{
 		writer : { // ProduktyStore::proxy::writer
 			writeAllFields : false,
 			allowSingle : false,
-			rootProperty : 'data',
+			root : 'data',
 			getRecordData : function(record,operation){
 				return record.data;
 			}
@@ -129,28 +130,30 @@ Ext.define('ProduktyStore',{
 
 		reader : { // ProduktyStore::proxy::reader
 			type : 'json',
-			rootProperty : 'data',
-			totalProperty : 'countTotal'
+			root : 'data',
+			total : 'countTotal'
 		} // CProduktyStore::proxy::reader
 
 	}, // ProduktyStore::proxy
 
 	onWriteCreate : function(store,operation,eOpts){
+		var def = this;
 		console.log('ProduktyStore::onWriteCreate');
 	},
 	setBankId : function(bank_id){
-		thisPS.bank_id = bank_id;
+		var def = this;
+		def.bank_id = bank_id;
 		if(bank_id > 0){
-			thisPS.clearFilter();
-			thisPS.filter({
+			def.clearFilter();
+			def.filter({
 				property: 'bank_id',
 				value: bank_id,
 				operator: '='
 			});
-			thisPS.load();
+			def.load();
 		}else{
-			thisPS.clearFilter();
-			thisPS.filter({
+			def.clearFilter();
+			def.filter({
 				property: 'bank_id',
 				value: bank_id,
 				operator: '='

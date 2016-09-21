@@ -6,10 +6,10 @@ Ext.define('ProduktyGrid',{
 	xtype : 'produkty-grid',
 
 	constructor : function(){
-	  var PG = this;
+	  var def = this;
 
-		PG.ProduktyStore = new Ext.create('ProduktyStore');
-		PG.RowEditing = new Ext.create('Ext.grid.plugin.RowEditing',{
+		def.ProduktyStore = new Ext.create('ProduktyStore');
+		def.RowEditing = new Ext.create('Ext.grid.plugin.RowEditing',{
 			clicksToMoveEditor: 1,
 			autoCancel: false,
 			errorSummary : false,
@@ -17,15 +17,15 @@ Ext.define('ProduktyGrid',{
 				canceledit : function(editor, context, eOpts){
 					console.log('ProduktyGrid::editing::canceledit');
 					if( (context.record.data.id === '' || context.record.data.id === 0 ) && context.record.data.symbol === ""){
-						PG.ProduktyStore.remove(PG.getView().getSelectionModel().getSelection()[0]);
+						def.ProduktyStore.remove(def.getView().getSelectionModel().getSelection()[0]);
 					}
 				}
 			}
 		});
 
-		Ext.apply(PG,{
+		Ext.apply(def,{
 				pageSize : 10,
-				store : PG.ProduktyStore,
+				store : def.ProduktyStore,
 				disabled : true,
 				columns:[
 					{
@@ -85,22 +85,22 @@ Ext.define('ProduktyGrid',{
 					{
 						xtype: 'pagingtoolbar',
 						dock: 'bottom',
-						store : PG.ProduktyStore,
+						store : def.ProduktyStore,
 						pageSize : 30,
 						displayMsg : '',
 						displayInfo: true
 					},{
 						text : 'dodaj',
-						scope : PG,
+						scope : def,
 						handler : function(){
-								var rec = new ProduktyModel({bank_id:PG.bank_id ,symbol:'',nazwa:'',opis:'',data_od:'',data_do:''});
+								var rec = new ProduktyModel({bank_id:def.bank_id ,symbol:'',nazwa:'',opis:'',data_od:'',data_do:''});
 								rec.set('tmpId' , Ext.id());
-								PG.ProduktyStore.insert(0, rec);
-								PG.RowEditing.startEdit(0,1);
+								def.ProduktyStore.insert(0, rec);
+								def.RowEditing.startEdit(0,1);
 						}
 					},{
 						text : 'usuń',
-						scope : PG,
+						scope : def,
 						itemId : 'delete',
 						handler : function(){
 							var selection = this.getView().getSelectionModel().getSelection()[0];
@@ -112,7 +112,7 @@ Ext.define('ProduktyGrid',{
 								function(btn){
 									if(btn === 'yes'){
 										if (selection) {
-											PG.ProduktyStore.remove(selection);
+											def.ProduktyStore.remove(selection);
 										}
 									}
 								}
@@ -122,35 +122,35 @@ Ext.define('ProduktyGrid',{
 				], // bbar
 
 				plugins:[
-					PG.RowEditing
+					def.RowEditing
 				]
 
 		});
-		PG.superclass.constructor.call(this,arguments);
-		PG.getSelectionModel().on('selectionchange', PG.onSelectionChange, PG);
+		def.superclass.constructor.call(this,arguments);
+		def.getSelectionModel().on('selectionchange', def.onSelectionChange, def);
 	},
 	initComponent : function(){
-		var PG = this;
-		PG.callParent();
-		PG.view.on('expandbody',PG.onRowExpandBody);
-		PG.view.on('collapsebody',PG.onRowCollapseBody);
+		var def = this;
+		def.callParent();
+		def.view.on('expandbody',def.onRowExpandBody);
+		def.view.on('collapsebody',def.onRowCollapseBody);
 	},
 	onSelectionChange: function(selModel, records){
-		var PG = this;
-		PG.down('#delete').setDisabled(records.length === 0);
+		var def = this;
+		def.down('#delete').setDisabled(records.length === 0);
 	},
 	setNazwa : function(nazwa){
-		var PG = this;
-		PG.setTitle('Prodykty banku : '+nazwa);
+		var def = this;
+		def.setTitle('Produkty banku : '+nazwa);
 	},
 	setBankId : function(bank_id){
-		var PG = this;
-		PG.ProduktyStore.setBankId(bank_id);
-		PG.bank_id = bank_id;
+		var def = this;
+		def.ProduktyStore.setBankId(bank_id);
+		def.bank_id = bank_id;
 		if(bank_id > 0){
-			PG.enable();
+			def.enable();
 		}else{
-			PG.setDisabled(true);
+			def.setDisabled(true);
 		}
 	}
 });

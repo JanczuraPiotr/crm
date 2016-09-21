@@ -123,7 +123,7 @@ Ext.define('GeneratorZadanForm',{
 	},
 	setNazwa : function(nazwa){
 		var def = this;
-		def.setTitle('Prodykty banku : '+nazwa);
+		def.setTitle('Produkty banku : '+nazwa);
 	},
 	setBankId : function(bank_id){
 		var def = this;

@@ -170,98 +170,6 @@ Ext.define('NadzorKlientowGrid',{
 								}
 							}
 						}
-//					},{
-//						text : 'nip',
-//						dataIndex : 'nip',
-//						width : 80,
-//						minWidth : 80,
-//						maxWidth : 80,
-//						'default' : null,
-//						editor : {
-//							'default' : null
-//						},
-//						items : {
-//							xtype : 'textfield',
-//							listeners : {
-//								change : function( thet, newValue, oldValue, eOpts ){
-//									def.RowsFilter.change('nip',newValue);
-//								}
-//							}
-//						}
-//					},{
-//						text : 'miejscowosc',
-//						dataIndex : 'miejscowosc',
-//						width : 80,
-//						minWidth : 80,
-//						maxWidth : 80,
-//						editor : {
-//							xtype : 'textfield'
-//						},
-//						renderer : function(value, metaData){
-//							console.info(value);
-//							console.info(metaData);
-//							return value + '<br>'+metaData.record.data.ul + ' ' + metaData.record.data.nr_b + ( metaData.record.data.nr_b ? ' /'+metaData.record.data.nr_b :'');
-//						},
-//						items : {
-//							xtype : 'textfield',
-//							listeners : {
-//								change : function( thet, newValue, oldValue, eOpts ){
-//									def.RowsFilter.change('miejscowosc',newValue);
-//								}
-//							}
-//						}
-//					},{
-//						text : 'ulica',
-//						dataIndex : 'ul',
-//						width : 80,
-//						minWidth : 80,
-//						maxWidth : 80,
-//						'default' : null,
-//						editor : {
-//							xtype : 'textfield'
-//						},
-//						items : {
-//							xtype : 'textfield',
-//							listeners : {
-//								change : function( thet, newValue, oldValue, eOpts ){
-//									def.RowsFilter.change('ul',newValue);
-//								}
-//							}
-//						}
-//					},{
-//						text : 'nr bud',
-//						dataIndex : 'nr_b',
-//						width : 45,
-//						minWidth : 45,
-//						maxWidth : 45,
-//						editor : {
-//							xtype : 'textfield'
-//						},
-//						items : {
-//							xtype : 'textfield',
-//							listeners : {
-//								change : function( thet, newValue, oldValue, eOpts ){
-//									def.RowsFilter.change('nr_b',newValue);
-//								}
-//							}
-//						}
-//					},{
-//						text : 'nr lok',
-//						dataIndex : 'nr_l',
-//						width : 45,
-//						minWidth : 45,
-//						maxWidth : 45,
-//						editor : {
-//							xtype : 'textfield'
-//						},
-//						items : {
-//							xtype : 'textfield',
-//							listeners : {
-//								change : function( thet, newValue, oldValue, eOpts ){
-//									def.RowsFilter.change('nr_l',newValue);
-//								}
-//							}
-//						}
 					},
 					def.ActionColumn
 
@@ -277,34 +185,6 @@ Ext.define('NadzorKlientowGrid',{
 						text : 'coś1',
 						scope :  def,
 						handler : function(){
-//							var recNew = new KlienciModel({
-//								nazwa:'',
-//								imie:'',
-//								nip:'',
-//								pesel:'',
-//								kod_poczt:'',
-//								miejsowosc:'',
-//								ul:'',
-//								nr_b:'',
-//								nr_l:'',
-//								email:'',
-//								telkom:'',
-//								teldom:'',
-//								telpraca:'',
-//								opis : '',
-//								pochodzenie_klientow_id : 0,
-//								firma_id : CRM.firma_id,
-//								data_od:'',
-//								data_do:''
-//							});
-//							var KlientForm = Ext.create('KlientForm',{},recNew,function(rec){
-//								if(rec === null){
-//									return;
-//								}
-//								rec.set('tmpId' , Ext.id());
-//								def.KlienciStore.insert(0, rec);
-//							});
-//							KlientForm.show();
 						}
 					},{
 						text : 'coś2',

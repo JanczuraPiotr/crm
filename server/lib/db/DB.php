@@ -12,7 +12,7 @@ class DB extends \pjpl\db\DB{
     parent::__construct($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass, $charset);
     $this->user_group = $user_group;
   }
-  public static function init($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass,$user_group = null, $charset = null, $used_tables=null) {
+  public static function init($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass, $user_group = null, $charset = null, $used_tables=null) {
     if(self::$instance !== null){
       return self::$instance;
     }
@@ -27,6 +27,8 @@ class DB extends \pjpl\db\DB{
       // Pełna inicjacja obietku.
       self::$instance->_init();
     }
+
+		return self::$instance;
   }
   private function _init(){
     $this->UprawnieniaGrup = \UprawnieniaGrupTable::getInstance();

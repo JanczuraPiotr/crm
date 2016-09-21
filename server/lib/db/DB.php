@@ -26,6 +26,7 @@ class DB extends \pjpl\db\DB{
 	 * @return type
 	 */
   public static function init($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass, $user_group = null, $charset = null, $used_tables=null) {
+		echo '<pre>'.__FILE__.' '.__LINE__.'<br>'; print_r(self::$instance); echo '</pre>';
     if(self::$instance !== null){
       return self::$instance;
     }
@@ -41,7 +42,7 @@ class DB extends \pjpl\db\DB{
 //      // Pełna inicjacja obietku.
 //      self::$instance->_init();
 //    }
-		
+
 		return self::$instance;
 
   }

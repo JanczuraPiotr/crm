@@ -14,7 +14,7 @@ abstract class Table{
   /**
    * @return Table
    */
-  abstract static function getInstance();
+	static function getInstance(){}
   public function __construct($DI, $DB) {
     $this->setDI($DI);
     $this->DB = $DB;

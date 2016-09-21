@@ -140,7 +140,7 @@ abstract class Encja {
 	 * @todo Co gdy występują pola które nie mają wartości null. Tworzyć szablon ale zgłaszać błąd gdy na jego podstawie tworzony jest rekord?
  	 * @return array Tablica asocjacyjna nazw pól obiektu i ich wartości
 	 */
-	abstract public static function nullRow();
+	public static function nullRow(){}
 	/**
 	 * Tablica z aktualnymi wartościami pól
 	 * @return array Tablica assocjacyjna nazw pól obiektu i ich wartości

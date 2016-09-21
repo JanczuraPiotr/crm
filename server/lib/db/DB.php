@@ -50,7 +50,6 @@ class DB extends \pjpl\db\DB{
     $this->UprawnieniaGrup->load();
     $this->Tables = \TabeleTable::getInstance();
     $this->Tables->load();
-//		echo '<pre>'.__FILE__.' '.__LINE__.'<br>'; print_r($this->Tables); echo '</pre>';
   }
 
   public function getChangedTable($used_tables){
@@ -248,7 +247,6 @@ class DB extends \pjpl\db\DB{
    * @return \PracownicyTable
    */
   public function tablePracownicy(){
-		echo '<pre>'.__FILE__.' '.__LINE__.'<br>'; print_r(\PracownicyTable::getInstance()); echo '</pre>';
     return \PracownicyTable::getInstance();
   }
   /**

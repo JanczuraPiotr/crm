@@ -31,7 +31,9 @@ class DB extends \pjpl\db\DB{
       return self::$instance;
     }
     self::$instance = new DB($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass, $charset, $user_group);
+		echo '<pre>'.__FILE__.' '.__LINE__.'<br>'; print_r(self::$instance); echo '</pre>';
 		self::$instance->_init();
+		echo '<pre>'.__FILE__.' '.__LINE__.'<br>'; print_r(self::$instance); echo '</pre>';
 
 //    if($used_tables !== null ) {
 //      // Dostęp do bazy wymagany jest tylko by sprawdzuć czy nastąpiły modyfikacje tabel, których identyfikatory przesłano w tabeli $used_tables.

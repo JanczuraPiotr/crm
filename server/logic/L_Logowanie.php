@@ -9,7 +9,7 @@ use pjpl\db\Where;
 class L_Logowanie extends BusinessLogic{
 
   protected function logic() {
-
+		echo '<pre>'.__FILE__.' '.__LINE__.'<br>'; print_r($this->DB); echo '</pre>';
     $PracownicyTable = $this->DB->tablePracownicy();
 		$WhereLogin = new Where([
 						[

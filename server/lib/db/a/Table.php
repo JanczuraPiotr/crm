@@ -1,6 +1,5 @@
 <?php
 namespace crmsw\lib\db\a;
-use pjpl\db\a\DependenceTableRecord;
 use pjpl\db\Record;
 /**
  * @done 2014-12-19

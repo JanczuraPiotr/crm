@@ -43,6 +43,7 @@ class DB extends \PDO{
    * @throw \E\PDOException  - nie nawiązano połączenia z bazą danych
    */
   public static function init($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass, $user_group = null, $charset = null, $used_tables=null){
+		echo '<pre>'.__FILE__.' '.__LINE__.'<br>'; print_r(self::$instance); echo '</pre>';
     if(self::$instance === null){
       self::$instance = new DB($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass);
     }

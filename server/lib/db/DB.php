@@ -30,18 +30,20 @@ class DB extends \pjpl\db\DB{
       return self::$instance;
     }
     self::$instance = new DB($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass, $charset, $user_group);
+		self::$instance->_init();
 
-    if($used_tables !== null ) {
-      // Dostęp do bazy wymagany jest tylko by sprawdzuć czy nastąpiły modyfikacje tabel, których identyfikatory przesłano w tabeli $used_tables.
-      // Nie ma więc potrzeby tworzyć całej infrastruktury obiektu, wykonane zostanie tylko porwównianie czasów modyfikacji tabel znanych klientowi z
-      // czasami zapisanymi w bazie i zwrócona zostanie tabela ze zmianami.
-      return $this->getChangedTable($used_tables);
-    }else{
-      // Pełna inicjacja obietku.
-      self::$instance->_init();
-    }
-
+//    if($used_tables !== null ) {
+//      // Dostęp do bazy wymagany jest tylko by sprawdzuć czy nastąpiły modyfikacje tabel, których identyfikatory przesłano w tabeli $used_tables.
+//      // Nie ma więc potrzeby tworzyć całej infrastruktury obiektu, wykonane zostanie tylko porwównianie czasów modyfikacji tabel znanych klientowi z
+//      // czasami zapisanymi w bazie i zwrócona zostanie tabela ze zmianami.
+//      return $this->getChangedTable($used_tables);
+//    }else{
+//      // Pełna inicjacja obietku.
+//      self::$instance->_init();
+//    }
+		
 		return self::$instance;
+
   }
   private function _init(){
     $this->UprawnieniaGrup = \UprawnieniaGrupTable::getInstance();

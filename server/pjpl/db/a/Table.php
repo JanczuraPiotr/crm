@@ -4,11 +4,9 @@ use pjpl\db\a\Encja;
 use pjpl\db\Record;
 use pjpl\db\Where;
 /**
- * @done 2014-12-19
  * @todo Rozważyć czy ponowne wywołanie A_DBTable::read() powinno bez ostrzeżeń czyścić wszystkie tablice przed wczytaniem nowych rekordów
  * @todo Filtry i czytanie z tabeli powinno pozwalać określić czy dotyczą tabeli w bazie czy zbioru pobranego wcześniej i zapianego w tej tabeli
  *				Można dodać metodę odłączającą tabelę od bazy danych na czas wykonywania zapytań na zgromadzonych danych
- * @doc 2014-10-27
  */
 abstract class Table{
   /**

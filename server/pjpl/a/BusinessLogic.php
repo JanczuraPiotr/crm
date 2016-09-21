@@ -6,8 +6,6 @@ use pjpl\Firewall;
  * @package pl.janczura.piotr (pjpl)
  * @subpackage logic
  * @author Piotr Janczura <piotr@janczura.pl>
- * @done 2014-12-20
- * @doc 2014-10-28
  */
  // @todo Przebudować a ewentualnie usunąć z interfejsu obsługę transakcji
 abstract class BusinessLogic{
@@ -184,19 +182,21 @@ abstract class BusinessLogic{
 			$in = json_decode($filter,TRUE);
 			foreach ($in as $key => $value) {
 				$expression = [];
-				switch($value['operator']){
-					case 'gt':
-						$expression['operator'] = '>';
-						break;
-					case 'lt':
-						$expression['operator'] = '<';
-						break;
-					case 'eq':
-						$expression['operator'] = '=';
-						break;
-					default :
-						$expression['operator'] = $value['operator'];
-						break;
+				if(isset($value['operator'])){
+					switch($value['operator']){
+						case 'gt':
+							$expression['operator'] = '>';
+							break;
+						case 'lt':
+							$expression['operator'] = '<';
+							break;
+						case 'eq':
+							$expression['operator'] = '=';
+							break;
+						default :
+							$expression['operator'] = $value['operator'];
+							break;
+					}
 				}
 				$expression['attribute'] = $this->Firewall->string($value['property']);
 				$expression['value'] = $this->Firewall->string($value['value']);

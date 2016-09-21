@@ -12,6 +12,19 @@ class DB extends \pjpl\db\DB{
     parent::__construct($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass, $charset);
     $this->user_group = $user_group;
   }
+	/**
+	 * Zwraca obekt dostępu do bazy danych.1
+	 * @param type $dbtype
+	 * @param type $dbhost
+	 * @param type $dbname
+	 * @param type $dbport
+	 * @param type $dbuser
+	 * @param type $dbpass
+	 * @param type $user_group
+	 * @param type $charset
+	 * @param type $used_tables
+	 * @return type
+	 */
   public static function init($dbtype, $dbhost, $dbname, $dbport, $dbuser, $dbpass, $user_group = null, $charset = null, $used_tables=null) {
     if(self::$instance !== null){
       return self::$instance;
@@ -35,6 +48,7 @@ class DB extends \pjpl\db\DB{
     $this->UprawnieniaGrup->load();
     $this->Tables = \TabeleTable::getInstance();
     $this->Tables->load();
+//		echo '<pre>'.__FILE__.' '.__LINE__.'<br>'; print_r($this->Tables); echo '</pre>';
   }
 
   public function getChangedTable($used_tables){
@@ -232,6 +246,7 @@ class DB extends \pjpl\db\DB{
    * @return \PracownicyTable
    */
   public function tablePracownicy(){
+		echo '<pre>'.__FILE__.' '.__LINE__.'<br>'; print_r(\PracownicyTable::getInstance()); echo '</pre>';
     return \PracownicyTable::getInstance();
   }
   /**

@@ -450,8 +450,8 @@ abstract class Table{
 			while ($rec = $this->LastPDOStatement->fetch(\PDO::FETCH_ASSOC)){
 				$this->rows[$rec['id']] = $rec;
 			}
-		$this->LastPDOStatement = $this->DB->query('SELECT FOUND_ROWS()');
-		$this->count_filtered = (int)$this->LastPDOStatement->fetchColumn();
+			$this->LastPDOStatement = $this->DB->query('SELECT FOUND_ROWS()');
+			$this->count_filtered = (int)$this->LastPDOStatement->fetchColumn();
 		}catch(\Exception $E){
 			$this->catchAllTypeException($E);
 		}

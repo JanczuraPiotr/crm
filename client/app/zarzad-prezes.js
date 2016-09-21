@@ -1,5 +1,5 @@
 /**
- * @work 4.2.0
+ * @done 4.2.0
  */
 Ext.onReady(function(){
 	Ext.tip.QuickTipManager.init();
@@ -27,7 +27,8 @@ Ext.onReady(function(){
 						try{
 							KlienciWindow.show().expand();
 						}catch(e){
-							KlienciWindow = new Ext.create('KlienciWindow').show();
+							KlienciWindow = new Ext.create('KlienciWindow');
+							KlienciWindow.show();
 						}
 					}
 			},{

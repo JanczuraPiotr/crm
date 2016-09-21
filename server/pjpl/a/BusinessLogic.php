@@ -115,7 +115,6 @@ abstract class BusinessLogic{
 					$this->catchNoRecord($E);
 					break;
 				case '\pjpl\e\db\EDBGeneral':
-					echo '<pre>'.__FILE__.'::'.__LINE__.'</pre>'.PHP_EOL;
 					$this->catchDBGeneral($E);
 					break;
 				default :

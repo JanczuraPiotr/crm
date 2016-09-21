@@ -4,5 +4,6 @@
 
 
 Ext.onReady(function(){
+	Ext.tip.QuickTipManager.init();
 
 });

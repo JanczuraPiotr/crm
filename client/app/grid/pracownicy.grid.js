@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  */
 Ext.define('PracownicyGrid',{
 	extend : 'Ext.grid.Panel',

@@ -1,7 +1,7 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  */
-Ext.define('PracownicyWindow',{
+Ext.define('PracownicyWindow', {
 	extend : 'Ext.window.Window',
 	title : 'Pracownicy firmy',
 	collapsible : true,

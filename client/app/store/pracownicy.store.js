@@ -1,6 +1,6 @@
 /**
  * @task 2014-10-30 Dodanie do response tablicy "err" informującej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
- * @task 4.2.0
+ * @work 4.2.0
  */
 Ext.define('PracownicyStore',{
 	extend : 'Ext.data.Store',
@@ -108,7 +108,7 @@ Ext.define('PracownicyStore',{
 		writer : { // PracownicyStore::proxy::writer
 			writeAllFields : false,
 			allowSingle : false,
-			rootProperty : 'data',
+			root : 'data',
 			getRecordData : function(record,operation){
 				return record.data;
 			}
@@ -116,8 +116,8 @@ Ext.define('PracownicyStore',{
 
 		reader : { // PracownicyStore::proxy::reader
 			type : 'json',
-			rootProperty : 'data',
-			totalProperty : 'countTotal'
+			root : 'data',
+			total : 'countTotal'
 		} // PracownicyStore::proxy::reader
 
 	}, // PracownicyStore::proxy

@@ -17,23 +17,6 @@ class L_PracownicyCreate extends \crmsw\lib\a\BusinessLogic{
   protected function logic() {
     foreach ($this->dataIn as $key => $row) {
       try{
-//        $ePracownik = \Pracownik::create([
-//						'firma_id'    => 	$row['firma_id'],
-//						'nazwisko'    => 	$row['nazwisko'],
-//						'imie'        => 	$row['imie'],
-//						'pesel'       => 	$row['pesel'],
-//						'kod_poczt'   => 	$row['kod_poczt'],
-//						'miejscowosc' => 	$row['miejscowosc'],
-//						'ul'          => 	$row['ul'],
-//						'nr_b'        => 	$row['nr_b'],
-//						'nr_l'        => 	$row['nr_l'],
-//						'tel'         => 	$row['tel'],
-//						'email'       => 	$row['email'],
-//						'login'       => 	NULL,
-//						'haslo'       => 	NULL,
-//						'data_od'     => 	$row['data_od'],
-//						'data_do'     => 	null
-//				]);
 				$ePracownik = \Pracownik::create($row);
 				$rPracownik = $this->PracownicyTable->createRecordImmediately($ePracownik);
 				$this->dataOut[$key] = array('id'=>$rPracownik->getId(),'tmpId'=>  $row['tmpId'], 'rec' => $rPracownik->toArray());

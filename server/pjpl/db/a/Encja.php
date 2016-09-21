@@ -11,8 +11,6 @@ use pjpl\e\NoExistAttribute;
  * @package pjpl
  * @subpackage database
  * @author Piotr Janczura <piotr@janczura.pl>
- * @doc 2014-10-14
- * @done 2014-09-03
  * @todo Rozbudowa o metodę zwracającą tablicę opisującą typy atrybutów i dopuszczalnych a potem o kontrolę czY encja spełnia warunki
  * @todo Opracować sposób testowania poprawności danych przed zapisem do bazy - Na razie błąd w danych stwierdzany jest przez odrzucenie encji przez bazę
  */

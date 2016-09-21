@@ -2,12 +2,11 @@
  * Wskazanie prezesa z pośród pracowników firmy.
  * Edycja loginu i hasła pracownika.
  *
- * @work 4.2.0
+ * @done 4.2.0
  */
 Ext.define('ZarzadWindow',{
 	extend : 'Ext.window.Window',
 	title : 'Zarządzanie prezesami',
-	collapsible : true,
 	layout : 'hbox',
 	modal : true,
 
@@ -17,10 +16,10 @@ Ext.define('ZarzadWindow',{
 		def.ZmianaHaslaForm = new Ext.create('ZmianaHaslaForm');
 
 		def.ZarzadGrid = new Ext.create('ZarzadGrid');
-		def.ZarzadGrid.on('select',function( thiss, record, index, eOpts ){
+		def.ZarzadGrid.on('select',function( thiss, record, index, eOpts ){console.log('ZarzadWindow::ZarządGrid::select');
 			def.ZmianaHaslaForm.setPracownik(record.data.id,record.data.nazwisko+' '+record.data.imie);
 		});
-		def.ZarzadGrid.on('deselect',function( thiss, record, index, eOpts ){
+		def.ZarzadGrid.on('deselect',function( thiss, record, index, eOpts ){console.log('ZarzadWindow::ZarządGrid::deselect');
 			def.ZmianaHaslaForm.setPracownik(0,'');
 		});
 		def.FirmyStore = new Ext.create('FirmyStore');
@@ -77,12 +76,13 @@ Ext.define('ZarzadWindow',{
 					}
 			], // bbar
 			listeners : {
-				select : function( thiss, record, index, eOpts ){
+				select : function( thiss, record, index, eOpts ){console.log('ZarzadWindow::FirmyGrid::select');
 					def.ZarzadGrid.setFirmaId(record.data.id);
 					def.ZarzadGrid.setFirmaNazwa(record.data.nazwa);
 				},
-				deselect : function( thiss, record, index, eOpts ){
+				deselect : function( thiss, record, index, eOpts ){console.log('ZarzadWindow::FirmyGrid::deselect');
 					def.ZarzadGrid.setFirmaId(0);
+					def.ZmianaHaslaForm.disable(true);
 				}
 			}
 		});

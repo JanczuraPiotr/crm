@@ -19,11 +19,9 @@ Ext.define('ProduktyForm',{
 			width : 420,
 			listeners : {
 				select : function( thiss, record, index, eOpts ){
-					var thisPG = this;
 					def.setProduktId(record.data.id, index);
 					def.DokumentyProduktuGrid.setProduktId(record.data.id);
 					def.getForm().loadRecord(record);
-
 				},
 				deselect : function( thiss, record, index, eOpts ){
 					def.setProduktId(0);

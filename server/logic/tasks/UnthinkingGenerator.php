@@ -180,7 +180,8 @@ class UnthinkingGenerator extends BusinessLogic{
 				'data_next_step'    => $params['data_next_step']
 		]);
 		$Create = new Create();
-		$Create->internalCall($Zadanie->toArray());
+		$arrPar = $Zadanie->toArray();
+		$Create->internalCall($arrPar);
 		$this->count++ ;
 	}
 	protected function _externalArguments(&$set_params) {

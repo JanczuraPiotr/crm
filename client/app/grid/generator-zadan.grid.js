@@ -1,14 +1,15 @@
 /**
- * @task 4.2.0
+ * @done 4.2.0
  */
 Ext.define('GeneratorZadanGrid',{
 	extend : 'Ext.grid.Panel',
-	xtype : 'generator-zadan-grid',
 
 	constructor : function(){
 	  var def = this;
-		def.ProduktyStore = new Ext.create('ProduktyStore');
-		def.RowExpander = Ext.create('Ext.grid.plugin.RowExpander',{
+		def.bankId = -1;
+
+		def.produktyStore = Ext.create('ProduktyStore');
+		def.rowExpander = Ext.create('Ext.grid.plugin.RowExpander',{
 			selectRowOnExpand : true,
 			expandOnDblClick : true,
 			expandOnEnter : true,
@@ -19,7 +20,7 @@ Ext.define('GeneratorZadanGrid',{
 			]
 		});
 		def.plugins = [
-			def.RowExpander
+			def.rowExpander
 		];
 		def.callParent(arguments);
 	},
@@ -28,13 +29,13 @@ Ext.define('GeneratorZadanGrid',{
 		var def = this;
 		Ext.apply(def,{
 				pageSize : 10,
-				store : def.ProduktyStore,
+				store : def.produktyStore,
 				disabled : true,
 				columns:[
 					{
 						text : 'id',
 						dataIndex : 'id',
-						width : 30
+						width : 30,
 					},{
 						text : 'symbol',
 						dataIndex : 'symbol',
@@ -55,7 +56,7 @@ Ext.define('GeneratorZadanGrid',{
 					{
 						xtype: 'pagingtoolbar',
 						dock: 'bottom',
-						store : def.ProduktyStore,
+						store : def.produktyStore,
 						pageSize : 30,
 						displayMsg : '',
 						displayInfo: true
@@ -74,11 +75,11 @@ Ext.define('GeneratorZadanGrid',{
 		var def = this;
 		def.setTitle('Produkty banku : '+nazwa);
 	},
-	setBankId : function(bank_id){
+	setBankId : function(bankId){
 		var def = this;
-		def.ProduktyStore.setBankId(bank_id);
-		def.bank_id = bank_id;
-		if(bank_id > 0){
+		def.produktyStore.setBankId(bankId);
+		def.bankId = bankId;
+		if(bankId > 0){
 			def.enable();
 		}else{
 			def.setDisabled(true);

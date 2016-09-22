@@ -37,10 +37,11 @@ Ext.onReady(function(){
 					{
 						text : 'generowanie zadan',
 						handler : function(p1,p2,p3,p4){
-							if(GeneratorZadanWindow === null){
-								GeneratorZadanWindow = new Ext.create('GeneratorZadanWindow').show();
-							}else{
-								GeneratorZadanWindow.show().expand();
+							try{
+								generatorZadanWindow.show().expand();
+							}catch(e){
+								generatorZadanWindow = Ext.create('GeneratorZadanWindow');
+								generatorZadanWindow.show();
 							}
 						}
 					},{

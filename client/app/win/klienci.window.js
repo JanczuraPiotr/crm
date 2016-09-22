@@ -7,31 +7,31 @@ Ext.define('KlienciWindow',{
 	resizable : false,
 	collapsible : true,
 
-	constructor : function(){console.log('KlienciWindow::constructor');
+	constructor : function(){console.log('klienciWindow::constructor');
 		var def = this;
 
 		Ext.define('KlienciWindow.KlienciGrid',{
 			extend : 'KlienciGrid',
 			flex :1,
 			listeners : {
-				select : function( thiss, record, index, eOpts ){
+				select : function( grid, record, index, eOpts ){
 					console.log('KlienciWindow.KlienciGrid.select');
-					def.Editor.setValue(record.data.opis);
+					def.htmlEditor.setValue(record.data.opis);
 				},
-				deselect : function( thiss, record, index, eOpts ){
+				deselect : function( grid, record, index, eOpts ){
 					console.log('KlienciWindow.KlienciGrid.deselect');
-					def.Editor.setValue('');
+					def.htmlEditor.setValue('');
 				}
 			}
 		});
 
-		def.KlienciGrid = Ext.create('KlienciWindow.KlienciGrid');
-		def.KlienciGrid.store.on('update', function( This, record, operation, modifiedFieldNames, eOpts ){
-			def.Editor.setValue(record.data.opis);
+		def.klienciGrid = Ext.create('KlienciWindow.KlienciGrid');
+		def.klienciGrid.store.on('update', function( grid, record, operation, modifiedFieldNames, eOpts ){
+			def.htmlEditor.setValue(record.data.opis);
 		});
 
 		// @todo Ukryć toolbar
-		def.Editor = Ext.create('Ext.form.field.HtmlEditor',{
+		def.htmlEditor = Ext.create('Ext.form.field.HtmlEditor',{
 			readOnly : true,
 			width : 600,
 			height : 505,
@@ -65,8 +65,8 @@ Ext.define('KlienciWindow',{
 								type : 'hbox'
 							},
 							items : [
-								def.KlienciGrid,
-								def.Editor
+								def.klienciGrid,
+								def.htmlEditor
 							]
 						},
 					]
@@ -79,12 +79,12 @@ Ext.define('KlienciWindow',{
 
 	listeners : {
 		close : function(panel,eOpts){
-			KlienciWindow = null;
+			klienciWindow = null;
 		}
 	},
 	EdytorSetValue : function(value){
 		var def = this;
-		def.Edytor.setValue(value);
+		def.htmlEdytor.setValue(value);
 	}
 });
-var KlienciWindow = null; // @todo przepisać na singletona w konstruktorze
+var klienciWindow = null; // @todo przepisać na singletona w konstruktorze

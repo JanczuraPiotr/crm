@@ -2,59 +2,58 @@
  * @task 4.2.0
  */
 Ext.define('GeneratorZadanWindow',{
-	xtype : 'generator-zadan-window',
 	extend : 'Ext.window.Window',
 	title : 'Generator Zadań',
 	collapsible : true,
 	layout : 'hbox',
 
 	constructor : function(){
-		var thisGZW = this;
-		thisGZW.GeneratorZadanForm = new Ext.create('GeneratorZadanForm');
+		var def = this;
+		def.generatorZadanForm = new Ext.create('GeneratorZadanForm');
 
-		thisGZW.BankiMinGrid = new Ext.create('BankiMinGrid',{
+		def.bankiMinGrid = new Ext.create('BankiMinGrid',{
 			height : 600,
 			listeners : {
 				select : function( thiss, record, index, eOpts ){
-					thisGZW.GeneratorZadanForm.setBankId(record.data.id);
-					thisGZW.GeneratorZadanForm.setNazwaBanku(record.data.nazwa);
+					def.generatorZadanForm.setBankId(record.data.id);
+					def.generatorZadanForm.setNazwaBanku(record.data.nazwa);
 				},
 				deselect : function( thiss, record, index, eOpts ){
-					thisGZW.GeneratorZadanForm.setBankId(0);
+					def.generatorZadanForm.setBankId(0);
 				}
 			}
 		});
-		thisGZW.FirmyMinGrid = new Ext.create('FirmyMinGrid',{
+		def.firmyMinGrid = new Ext.create('FirmyMinGrid',{
 			listeners : {
 				select : function( thiss, record, index, eOpts ){
-					thisGZW.GeneratorZadanForm.setFirmaId(record.data.id);
+					def.generatorZadanForm.setFirmaId(record.data.id);
 				},
 				deselect : function( thiss, record, index, eOpts ){
-					thisGZW.GeneratorZadanForm.setFirmaId(0);
+					def.generatorZadanForm.setFirmaId(0);
 				}
 			}
 		});
-		thisGZW.superclass.constructor.call(thisGZW, arguments);
+		def.superclass.constructor.call(def, arguments);
 	},
 
 	initComponent : function(){
-		var thisGZW = this;
+		var def = this;
 
-		Ext.apply(thisGZW,{
+		Ext.apply(def,{
 			items : [
-				thisGZW.FirmyMinGrid,
-				thisGZW.BankiMinGrid,
-				thisGZW.GeneratorZadanForm
+				def.firmyMinGrid,
+				def.bankiMinGrid,
+				def.generatorZadanForm
 			],
 			resizable : false
 		});
-		thisGZW.callParent();
+		def.callParent();
 	},
 	listeners : {
 		close : function(panel, eOpts){
-			GeneratorZadanWindow = null;
+			generatorZadanWindow = null;
 		}
 	}
 });
 
-var GeneratorZadanWindow = null;
+var generatorZadanWindow = null;

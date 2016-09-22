@@ -1,10 +1,10 @@
 /**
  * @work 4.2.0
+ * @work 4.2.0 przywrócić filtr w nagłówku jak w 4.2.2
  * @todo Dodać jakiś przycisk powodujący wyczyszczenie wszystkich pól edycyjnych filtra.
  * @todo Kolumny liczbowe wyrównać do prawej strony.
  * @todo Data następnej dostawy musi uwzględnić godziny
  */
-
 Ext.define('KlienciGrid',{
 	extend : 'Ext.grid.Panel',
 	xtype : 'klienci-grid',
@@ -76,13 +76,14 @@ Ext.define('KlienciGrid',{
 			]});
 
 		def.store = def.KlienciStore;
+		def.RowsFilter = new RowsFilter(def);
 
 		def.plugins = [
-			def.RowExpander
+			def.RowExpander,
 		];
 
 		def.callParent(arguments);
-		def.RowsFilter = new RowsFilter(def);
+
 
 		def.on('itemcontextmenu',function(view, record, item, index, event){
 			var position = event.getXY();
@@ -91,7 +92,7 @@ Ext.define('KlienciGrid',{
 		});
 	},
 
-	initComponent : function(){
+	initComponent : function(){console.log('KlienciGrid::initComponent()');
 		var def = this;
 
 		Ext.apply( def,{
@@ -106,14 +107,16 @@ Ext.define('KlienciGrid',{
 						editor : {
 							xtype : 'textfield'
 						},
-						items : {
-							xtype : 'textfield',
-							listeners : {
-								change : function( thet, newValue, oldValue, eOpts ){
-									def.RowsFilter.change('id',newValue);
-								}
+						listeners : {
+							render : function(columnHeader){ console.log('KlienciGrid::initComponent()::columns[id]::listeners::render()');
+								var el = columnHeader.getEl();
+								var component = columnHeader.getComponent();
+								console.log(columnHeader);
+								console.log(el);
+								console.log(component);
 							}
 						}
+
 					},{
 						text : 'nazwa',
 						dataIndex : 'nazwa',
@@ -126,12 +129,22 @@ Ext.define('KlienciGrid',{
 						},
 						items : {
 							xtype : 'textfield',
-							listeners : {
-								change : function( thet, newValue, oldValue, eOpts ){
-									def.RowsFilter.change('nazwa',newValue);
-								}
+//							listeners : {
+//								change : function( thet, newValue, oldValue, eOpts ){
+//									def.RowsFilter.change('nazwa',newValue);
+//								}
+//							}
+						},
+						listeners : {
+							render : function(columnHeader){ console.log('KlienciGrid::initComponent()::columns[id]::listeners::render()');
+								var el = columnHeader.getEl();
+								var component = columnHeader.getComponent();
+								console.log(columnHeader);
+								console.log(el);
+								console.log(component);
 							}
 						}
+
 					},{
 						text : 'imie',
 						dataIndex : 'imie',
@@ -143,11 +156,11 @@ Ext.define('KlienciGrid',{
 						},
 						items : {
 							xtype : 'textfield',
-							listeners : {
-								change : function( thet, newValue, oldValue, eOpts ){
-									def.RowsFilter.change('imie',newValue);
-								}
-							}
+//							listeners : {
+//								change : function( thet, newValue, oldValue, eOpts ){
+//									def.RowsFilter.change('imie',newValue);
+//								}
+//							}
 						}
 					},{
 						text : 'pesel',
@@ -161,11 +174,11 @@ Ext.define('KlienciGrid',{
 						},
 						items : {
 							xtype : 'textfield',
-							listeners : {
-								change : function( thet, newValue, oldValue, eOpts ){
-									def.RowsFilter.change('pesel',newValue);
-								}
-							}
+//							listeners : {
+//								change : function( thet, newValue, oldValue, eOpts ){
+//									def.RowsFilter.change('pesel',newValue);
+//								}
+//							}
 						}
 					},{
 						text : 'nip',
@@ -179,11 +192,11 @@ Ext.define('KlienciGrid',{
 						},
 						items : {
 							xtype : 'textfield',
-							listeners : {
-								change : function( thet, newValue, oldValue, eOpts ){
-									def.RowsFilter.change('nip',newValue);
-								}
-							}
+//							listeners : {
+//								change : function( thet, newValue, oldValue, eOpts ){
+//									def.RowsFilter.change('nip',newValue);
+//								}
+//							}
 						}
 					},{
 						text : 'miejscowosc',
@@ -196,11 +209,11 @@ Ext.define('KlienciGrid',{
 						},
 						items : {
 							xtype : 'textfield',
-							listeners : {
-								change : function( thet, newValue, oldValue, eOpts ){
-									def.RowsFilter.change('miejscowosc',newValue);
-								}
-							}
+//							listeners : {
+//								change : function( thet, newValue, oldValue, eOpts ){
+//									def.RowsFilter.change('miejscowosc',newValue);
+//								}
+//							}
 						}
 					},{
 						text : 'ulica',
@@ -214,11 +227,11 @@ Ext.define('KlienciGrid',{
 						},
 						items : {
 							xtype : 'textfield',
-							listeners : {
-								change : function( thet, newValue, oldValue, eOpts ){
-									def.RowsFilter.change('ul',newValue);
-								}
-							}
+//							listeners : {
+//								change : function( thet, newValue, oldValue, eOpts ){
+//									def.RowsFilter.change('ul',newValue);
+//								}
+//							}
 						}
 					},{
 						text : 'nr bud',
@@ -231,11 +244,11 @@ Ext.define('KlienciGrid',{
 						},
 						items : {
 							xtype : 'textfield',
-							listeners : {
-								change : function( thet, newValue, oldValue, eOpts ){
-									def.RowsFilter.change('nr_b',newValue);
-								}
-							}
+//							listeners : {
+//								change : function( thet, newValue, oldValue, eOpts ){
+//									def.RowsFilter.change('nr_b',newValue);
+//								}
+//							}
 						}
 					},{
 						text : 'nr lok',
@@ -248,11 +261,11 @@ Ext.define('KlienciGrid',{
 						},
 						items : {
 							xtype : 'textfield',
-							listeners : {
-								change : function( thet, newValue, oldValue, eOpts ){
-									def.RowsFilter.change('nr_l',newValue);
-								}
-							}
+//							listeners : {
+//								change : function( thet, newValue, oldValue, eOpts ){
+//									def.RowsFilter.change('nr_l',newValue);
+//								}
+//							}
 						}
 					},
 					def.ActionColumn

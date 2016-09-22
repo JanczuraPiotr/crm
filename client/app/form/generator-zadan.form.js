@@ -1,19 +1,18 @@
 /**
- * @task 4.2.0
+ * @done 4.2.0
  */
 Ext.define('GeneratorZadanForm',{
 	extend : 'Ext.form.Panel',
-	xtype : 'generator-zadan-form',
 	title : 'Generator Zadań',
 
 	constructor : function(){
 		var def = this;
 		def.index = -1; // index rekordu umieszczonego w formularzy
-		def.produkt_id = -1;
-		def.firma_id = CRM.firma_id;
+		def.produktId = -1;
+		def.firmaId = CRM.firma_id;
 
 
-		def.Container = new Ext.create('Ext.container.Container',{
+		def.configContainer = new Ext.create('Ext.container.Container',{
 			disabled : true,
 			layout: 'vbox',
 			items : [
@@ -36,8 +35,8 @@ Ext.define('GeneratorZadanForm',{
 								Ext.Ajax.request({
 									url : '../server/ajax/generator-zadan.php?action=generate',
 									params : {
-										produkt_id : def.produkt_id,
-										firma_id : def.firma_id
+										produkt_id : def.produktId,
+										firma_id : def.firmaId
 									},
 									success : function(response){
 										var resp = Ext.JSON.decode(response.responseText);
@@ -55,48 +54,46 @@ Ext.define('GeneratorZadanForm',{
 			]
 		});
 
-		def.GeneratorZadanGrid = new Ext.create('GeneratorZadanGrid',{
+		def.gneratorZadanGrid = new Ext.create('GeneratorZadanGrid',{
 			height : 574,
 			width : 360,
 			listeners : {
-				select : function( thiss, record, index, eOpts ){
-					def.produkt_id = record.data.id;
-					def.setProduktId(def.produkt_id, index);
+				select : function( grid, record, index, eOpts ){
+					def.produktId = record.data.id;
+					def.setProduktId(def.produktId, index);
 					def.getForm().loadRecord(record);
-					def.Container.enable();
+					def.configContainer.enable();
 
 				},
-				deselect : function( thiss, record, index, eOpts ){
-					def.produkt_id = 0;
-					def.setProduktId(def.produkt_id);
-					def.Container.setDisabled(true);
+				deselect : function( grid, record, index, eOpts ){
+					def.produktId = 0;
+					def.setProduktId(def.produktId);
+					def.configContainer.setDisabled(true);
 				}
 			},
-			setBankId : function(bank_id){
-				def.Container.setDisabled(true);
-				def.produkt_id = 0;
+			setBankId : function(bankId){
+				def.configContainer.setDisabled(true);
+				def.produktId = 0;
 
-				def.GeneratorZadanGrid.ProduktyStore.setBankId(bank_id);
-				def.GeneratorZadanGrid.bank_id = bank_id;
-				if(bank_id > 0){
-					def.GeneratorZadanGrid.enable();
+				def.gneratorZadanGrid.produktyStore.setBankId(bankId);
+				def.gneratorZadanGrid.bank_id = bankId;
+				if(bankId > 0){
+					def.gneratorZadanGrid.enable();
 				}else{
-					def.GeneratorZadanGrid.setDisabled(true);
+					def.gneratorZadanGrid.setDisabled(true);
 				}
 			}
 		});
-		def.store = def.GeneratorZadanGrid.getStore(),
+		def.store = def.gneratorZadanGrid.getStore(),
 
-		def.GeneratorZadanGrid.getStore().onWriteCreate = function(store,operation,eOpts){
-			console.log('GeneratorZadanForm::onWriteCreate');
+		def.gneratorZadanGrid.getStore().onWriteCreate = function(store,operation,eOpts){console.log('GeneratorZadanForm::onWriteCreate');
 		},
 
 		def.callParent(arguments);
 //		def.superclass.constructor.call(def,arguments);
 	},
 
-	initComponent : function(){
-		console.log('GeneratorZadanForm::initComponent()');
+	initComponent : function(){console.log('GeneratorZadanForm::initComponent()');
 		var def = this;
 		Ext.apply(def,{
 			frame : true,
@@ -106,16 +103,16 @@ Ext.define('GeneratorZadanForm',{
 			width : 800,
 			height : 600,
 			items : [
-				def.GeneratorZadanGrid,
-				def.Container
+				def.gneratorZadanGrid,
+				def.configContainer
 			]
 		});
 		def.callParent();
 	},
 
-	setFirmaId : function(firma_id){
+	setFirmaId : function(firmaId){
 		var def = this;
-		def.firma_id = firma_id;
+		def.firmaId = firmaId;
 	},
 	setNazwaBanku : function(nazwa){
 		var def = this;
@@ -127,14 +124,14 @@ Ext.define('GeneratorZadanForm',{
 	},
 	setBankId : function(bank_id){
 		var def = this;
-		def.GeneratorZadanGrid.setBankId(bank_id);
+		def.gneratorZadanGrid.setBankId(bank_id);
 		def.loadRecord(new GeneratorZadanModel({bank_id:'' ,symbol:'',nazwa:'',opis:'',data_od:'',data_do:''}));
 		def.index = -1;
-		def.produkt_id = -1;
+		def.produktId = -1;
 	},
-	setProduktId : function(produkt_id,index){
+	setProduktId : function(produktId,index){
 		var def = this;
-		def.produkt_id = produkt_id;
+		def.produktId = produktId;
 		def.index = index;
 	}
 });

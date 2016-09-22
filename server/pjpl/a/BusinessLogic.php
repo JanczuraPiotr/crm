@@ -198,8 +198,15 @@ abstract class BusinessLogic{
 							break;
 					}
 				}
-				$expression['attribute'] = $this->Firewall->string($value['property']);
-				$expression['value'] = $this->Firewall->string($value['value']);
+
+				if(isset($value['value'])){
+					$expression['attribute'] = $this->Firewall->string($value['property']);
+					$expression['value'] = $this->Firewall->string($value['value']);
+				}else{
+					$expression['attribute'] = $this->Firewall->string($key);
+					$expression['value'] = $this->Firewall->string($value['property']);
+				}
+				
 				$new_filter[] = $expression;
 			}
 		}

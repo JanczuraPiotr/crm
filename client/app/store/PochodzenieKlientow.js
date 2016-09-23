@@ -3,9 +3,9 @@
  * @task 2014-10-30 Dodanie do response tablicy "err" informującej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  * @work 4.2.0
  */
-Ext.define('PochodzenieKlientowStore',{
+Ext.define('CRM.store.PochodzenieKlientow',{
 	extend : 'Ext.data.Store',
-	model : PochodzenieKlientowModel,
+	model : 'CRM.model.PochodzenieKlientow',
 	autoLoad : true,
 	autoSync : true,
 	autoSave : false,
@@ -110,7 +110,7 @@ Ext.define('PochodzenieKlientowStore',{
 		writer : { // PochodzenieklientowStore::proxy::writer
 			writeAllFields : false,
 			allowSingle : false,
-			rootProperty : 'data',
+			root : 'data',
 			getRecordData : function(record,operation){
 				return record.data;
 			}

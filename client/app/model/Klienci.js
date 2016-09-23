@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @done 4.2.0
  */
 var KlienciFields = [
 	{
@@ -64,7 +64,7 @@ var KlienciFields = [
 	}
 ];
 
-Ext.define('KlienciModel',{
+Ext.define('CRM.model.Klienci',{
 	extend : 'Ext.data.Model',
 	fields : KlienciFields,
 	idProtperty : 'id'

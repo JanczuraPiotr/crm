@@ -4,9 +4,9 @@
  * @todo Rozbić komunikację by kolumna "opis" była wczytywana dopiero bo zaznaczeniu klienta
  */
 
-Ext.define('KlienciStore',{
+Ext.define('CRM.store.Klienci',{
 	extend : 'Ext.data.Store',
-	model : KlienciModel,
+	model : 'CRM.model.Klienci',
 	autoLoad : true,
 	autoSync : true,
 	autoSave : true,
@@ -24,7 +24,7 @@ Ext.define('KlienciStore',{
 					records,
 					recIndex,
 					recStore;
-			switch(operation.getRequest().getAction()){
+			switch(operation.action){
 				case 'create':
 					records = operation.getRecords();
 					for( record in records ){

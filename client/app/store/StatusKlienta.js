@@ -1,22 +1,15 @@
 /**
  * @task 2014-10-30 Zamiana response.ret >>> response.code
  * @task 2014-10-30 Dodanie do response tablicy "err" informującej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
- * @task 4.2.0
+ * @work 4.2.0
  */
-Ext.define('StatusKlientaStore',{
+Ext.define('CRM.store.StatusKlienta',{
 	extend : 'Ext.data.Store',
-	xtype : 'status-klienta-store',
-	alias : 'status-klienta-store',
-	model : StatusKlientaModel,
+	model : 'CRM.model.StatusKlienta',
 	autoLoad : true,
 	autoSync : true,
 	autoSave : false,
 	idProperty : 'id',
-
-	constructor : function(){
-		thisSKS = this; // @todo usuń zmienną globalną thisSKS = this >> var def = this
-		thisSKS.superclass.constructor.call(this,arguments);
-	},
 
 	listeners : { //PochodzenieklientaStore::listenets
 		write : function(store,operation,eOpts){

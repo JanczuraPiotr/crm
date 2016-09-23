@@ -14,7 +14,7 @@ var PochodzenieKlientowFields = [
 	}
 ];
 
-Ext.define('PochodzenieKlientowModel',{
+Ext.define('CRM.model.PochodzenieKlientow',{
 	extend : 'Ext.data.Model',
 	fields : PochodzenieKlientowFields,
 	idProperty : 'id'

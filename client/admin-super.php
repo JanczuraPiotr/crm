@@ -36,12 +36,6 @@ if( !isset($_SESSION['USER_STATUS']) || $_SESSION['USER_STATUS'] !== CRM::ADMIN_
 		<script src="ext/ext-all.js" ></script>
 		<script src="ext/locale/ext-lang-pl.js"></script>
 
-<!--
-		<link href="client/ext/5.1.0/resources/ext-all.css" rel="stylesheet" type="text/css" />
-		<script src="client/ext/5.1.0/ext-all.js" ></script>
-		<script src="client/ext/5.1.0/locale/ext-locale-pl.js"></script>
--->
-
   </head>
   <body>
 
@@ -57,36 +51,6 @@ if( !isset($_SESSION['USER_STATUS']) || $_SESSION['USER_STATUS'] !== CRM::ADMIN_
 		<script src="crm.js"></script>
 
     <script src="app/admin-super.app.js"></script>
-
-
-<!--
-		<script src="ext/pjpl/RowsFilter.js"></script>
-
-		<script src="app/model/firmy.model.js"></script>
-		<script src="app/model/firmy-oddzialy.model.js"></script>
-		<script src="app/model/pracownicy.model.js"></script>
-		<script src="app/model/zarzad.model.js"></script>
-
-		<script src="app/store/firmy.store.js"></script>
-		<script src="app/store/firmy-oddzialy.store.js"></script>
-		<script src="app/store/pracownicy.store.js"></script>
-    <script src="app/store/zarzad.store.js" ></script>
-
-		<script src="app/grid/firmy.grid.js"></script>
-		<script src="app/grid/firmy-oddzialy.grid.js"></script>
-		<script src="app/grid/pracownicy.grid.js"></script>
-    <script src="app/grid/zarzad.grid.js" ></script>
-
-		<script src="app/form/zmiana-hasla.form.js"></script>
-
-    <script src="app/win/dane-logowania.window.js" type="text/javascript"></script>
-    <script src="app/win/firmy.window.js" type="text/javascript"></script>
-		<script src="app/win/help.window.js"></script>
-		<script src="app/win/wybor-daty.window.js"></script>
-
-    <script src="app/win/admin/zarzad.window.js" type="text/javascript"></script>
-
--->
 
 		<script>
 				Ext.getBody().unmask();

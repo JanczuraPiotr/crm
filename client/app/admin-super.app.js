@@ -7,7 +7,6 @@ Ext.application({
     appFolder: 'app',
 
     requires: [
-			'Ext.container.Viewport',
 			'CRM.store.Firmy',
 			'CRM.grid.Firmy',
 			'CRM.window.admin.Zarzad',

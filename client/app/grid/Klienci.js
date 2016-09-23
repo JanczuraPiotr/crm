@@ -5,22 +5,23 @@
  * @todo Kolumny liczbowe wyrównać do prawej strony.
  * @todo Data następnej dostawy musi uwzględnić godziny
  */
-Ext.define('KlienciGrid',{
+Ext.define('CRM.grid.Klienci',{
 	extend : 'Ext.grid.Panel',
-	xtype : 'klienci-grid',
 	width : 695,
 	height : 505,
 
 	constructor : function(){
 		var def = this;
+
 		def.klient_id = 0;
-		def.KlienciStore = Ext.create('KlienciStore');
-		def.KlienciStore.remoteFilter = true;
-		def.PochodzenieKlientowStore = Ext.create('PochodzenieKlientowStore');
-		def.PochodzenieKlientowStore.load();
-		def.StatusKlientaStore = Ext.create('StatusKlientaStore');
-		def.StatusKlientaStore.load();
-		def.RowExpander = Ext.create('Ext.grid.plugin.RowExpander',{
+		def.klienciStore = Ext.create('CRM.store.Klienci');
+		def.klienciStore.remoteFilter = true;
+		def.pochodzenieKlientowStore = Ext.create('CRM.store.PochodzenieKlientow');
+		def.pochodzenieKlientowStore.load();
+		def.statusKlientaStore = Ext.create('CRM.store.StatusKlienta');
+		def.statusKlientaStore.load();
+
+		def.rowExpander = Ext.create('Ext.grid.plugin.RowExpander',{
 			selectRowOnExpand : true,
 			expandOnDblClick : true,
 			expandOnEnter : true,
@@ -40,14 +41,15 @@ Ext.define('KlienciGrid',{
 				'		</table>'
 			]
 		});
-		def.ActionColumn = new Ext.grid.column.Action({
+
+		def.actionColumn = new Ext.grid.column.Action({
 			width : 20,
 			items : [
 				{
 					icon : 'images/edit.png',
 					tooltip : 'edytuj klienta',
 					handler : function(grid, rowIndex, colIndex){
-						var KlientForm = Ext.create('KlientForm',{/*config*/},def.getView().getRecord(rowIndex), function(rec){
+						var KlientForm = Ext.create('CRM.form.Klient',{/*config*/},def.getView().getRecord(rowIndex), function(rec){
 							if(rec){
 								rec.commit();
 							}
@@ -58,7 +60,7 @@ Ext.define('KlienciGrid',{
 			]
 		});
 
-		def.ContextMenu = Ext.create('Ext.menu.Menu', {
+		def.contextMenu = Ext.create('Ext.menu.Menu', {
 			items: [
 				{
 					text : 'zadania procedowane',
@@ -75,26 +77,26 @@ Ext.define('KlienciGrid',{
 				}
 			]});
 
-		def.store = def.KlienciStore;
-		def.RowsFilter = new RowsFilter(def);
+		def.store = def.klienciStore;
+//		def.RowsFilter = new RowsFilter(def);
+
 
 		def.plugins = [
-			def.RowExpander,
+			def.rowExpander,
 		];
-
-		def.callParent(arguments);
-
+		def.callParent(arguments); //def.superclass.constructor.call(this,arguments);
 
 		def.on('itemcontextmenu',function(view, record, item, index, event){
 			var position = event.getXY();
 			event.stopEvent();
-			def.ContextMenu.showAt(position);
+			def.contextMenu.showAt(position);
 		});
+
 	},
 
 	initComponent : function(){console.log('KlienciGrid::initComponent()');
 		var def = this;
-
+//
 		Ext.apply( def,{
 				pageSize : 10,
 				columns:[
@@ -268,21 +270,21 @@ Ext.define('KlienciGrid',{
 //							}
 						}
 					},
-					def.ActionColumn
+					def.actionColumn
 
 				], // columns
 				bbar : [
 					{
 						xtype: 'pagingtoolbar',
 						dock: 'bottom',
-						store :  def.KlienciStore,
+						store :  def.klienciStore,
 						pageSize : 30,
 						displayInfo: true
 					},{
 						text : 'dodaj',
 						scope :  def,
 						handler : function(){
-							var recNew = new KlienciModel({
+							var recNew = Ext.create('CRM.model.Klienci',{
 								nazwa:'',
 								imie:'',
 								nip:'',
@@ -307,7 +309,7 @@ Ext.define('KlienciGrid',{
 									return;
 								}
 								rec.set('tmpId' , Ext.id());
-								def.KlienciStore.insert(0, rec);
+								def.klienciStore.insert(0, rec);
 								// @todo Po dodaniu nowego rekordu grid musi być odświerzony by rekord można było usunąć. Edycja możliwa jest od razu
 							});
 							KlientForm.show();
@@ -326,16 +328,16 @@ Ext.define('KlienciGrid',{
 								function(btn){
 									if(btn === 'yes'){
 										if (selection) {
-											 def.KlienciStore.remove(selection);
+											 def.klienciStore.remove(selection);
 										}
 									}
 								}
 							);
 						}
 					}
-				] // bbar
-
+				], // bbar
 		});
+
 		def.callParent();
 	}
 });

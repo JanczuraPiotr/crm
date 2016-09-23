@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  */
 var StatusKlientaFields = [
 	{
@@ -17,7 +17,7 @@ var StatusKlientaFields = [
 	}
 ];
 
-Ext.define('StatusKlientaModel',{
+Ext.define('CRM.model.StatusKlienta',{
 	extend : 'Ext.data.Model',
 	alias : 'status-klienta-model',
 	idProperty : 'id',

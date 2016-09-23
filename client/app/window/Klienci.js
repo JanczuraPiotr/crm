@@ -1,17 +1,21 @@
 /**
  * @work 4.2.0
  */
-Ext.define('KlienciWindow',{
+Ext.define('CRM.window.Klienci',{
 	extend : 'Ext.window.Window',
 	title : 'Klienci [dane podstawowe]',
+
+	requires : [
+		'CRM.grid.Klienci'
+	],
+
 	resizable : false,
 	collapsible : true,
 
-	constructor : function(){console.log('klienciWindow::constructor');
+	constructor : function(){console.log('CRM.window.Klienci::constructor');
 		var def = this;
 
-		Ext.define('KlienciWindow.KlienciGrid',{
-			extend : 'KlienciGrid',
+		def.gridKlienci = Ext.create('CRM.grid.Klienci',{
 			flex :1,
 			listeners : {
 				select : function( grid, record, index, eOpts ){
@@ -21,12 +25,10 @@ Ext.define('KlienciWindow',{
 				deselect : function( grid, record, index, eOpts ){
 					console.log('KlienciWindow.KlienciGrid.deselect');
 					def.htmlEditor.setValue('');
-				}
-			}
+				},
+			},
 		});
-
-		def.klienciGrid = Ext.create('KlienciWindow.KlienciGrid');
-		def.klienciGrid.store.on('update', function( grid, record, operation, modifiedFieldNames, eOpts ){
+		def.gridKlienci.store.on('update', function( grid, record, operation, modifiedFieldNames, eOpts ){
 			def.htmlEditor.setValue(record.data.opis);
 		});
 
@@ -37,7 +39,7 @@ Ext.define('KlienciWindow',{
 			height : 505,
 		});
 
-		def.callParent();
+		def.callParent(arguments);
 	},
 
 	initComponent : function(){
@@ -65,7 +67,7 @@ Ext.define('KlienciWindow',{
 								type : 'hbox'
 							},
 							items : [
-								def.klienciGrid,
+								def.gridKlienci,
 								def.htmlEditor
 							]
 						},

@@ -3,7 +3,7 @@
  * @work 4.2.0
  */
 
-Ext.define('KlientForm',{
+Ext.define('CRM.form.Klient',{
 	extend : 'Ext.window.Window',
 	alias : 'klient-form',
 	title : 'Edycja danych klienta',
@@ -24,7 +24,7 @@ Ext.define('KlientForm',{
 		}else{
 			def.createRecord = false;
 		}
-		def.PochodzenieKlientowStore = Ext.create('PochodzenieKlientowStore');
+		def.PochodzenieKlientowStore = Ext.create('CRM.store.PochodzenieKlientow');
 		// @todo nie pojawia się:
 		def.PochodzenieKlientowCombo = Ext.create('Ext.form.field.ComboBox',{
 			name : 'pochodzenie_klientow_id',

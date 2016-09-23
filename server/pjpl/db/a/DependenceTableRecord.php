@@ -58,7 +58,7 @@ abstract class DependenceTableRecord{
 		foreach ($Record->toArray() as $key => $value) {
 			$prepare[':'.$key] = $value;
 		}
-		return $prepare;
+	  return "UPDATE ".$this->tableName()." SET ".$prepare." WHERE id = :id";
 	}
 	/**
 	 * Na podstawie konkretnego typu Encji na potrzeby tabeli bazy danych dla której jest definiowana klasa musi utworzyć string
@@ -89,7 +89,7 @@ abstract class DependenceTableRecord{
 		$prepare = "";
 		$przecinek = "";
 		foreach ($row_name as $key => $value) {
-			$prepare .= $przecinek." `$key` = :$key";
+			$prepare .= $przecinek." $key = :$key";
 			$przecinek = ",";
 		}
 	  return "UPDATE ".$this->tableName()." SET ".$prepare." WHERE id = :id";

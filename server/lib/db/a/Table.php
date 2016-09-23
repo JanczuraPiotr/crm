@@ -63,9 +63,10 @@ abstract class Table extends \pjpl\db\a\Table{
 	 */
   public function updateRecordImmediately(Record $Record){
     if($this->DB->canUpdate($this->DI->TabelaId())){
-		 	$this->µsUpdate = µs();
 			$this->LastPDOStatement = $this->DB->prepare($this->queryUpdate);
-			$this->LastPDOStatement->execute($this->DI->prepareParamsUpdate($Record, $this->µsUpdate));
+			$this->µsUpdate = µs();
+			$executeParam = $this->DI->prepareParamsUpdateUs($Record, $this->µsUpdate);
+			$this->LastPDOStatement->execute($executeParam);
       $this->DB->doneUpdating($this->DI->TabelaId(), $this->µsUpdate);
 			$this->readRow($Record->getId());
 		}else{
@@ -86,6 +87,14 @@ abstract class Table extends \pjpl\db\a\Table{
     }
   }
 
+	protected function setDI($DI){
+		$DI->setTable($this);
+		$this->DI = $DI;
+		$this->queryCreate = $this->DI->prepareQueryCreate();
+		$this->queryRead = $this->DI->prepareQueryRead();
+		$this->queryUpdate = $this->DI->prepareQueryUpdateUs();
+		$this->queryDelete = $this->DI->prepareQueryDelete();
+	}
   /**
 	 * Metoda kontroluje czy zalogowany użytkownik ma prawo usunąć rekord oraz wywołuje metodę DB::doneDeleting()
 	 * w celu poinformowanie o czasie usunięcia rekordu z tabeli

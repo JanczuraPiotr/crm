@@ -38,9 +38,10 @@ abstract class BusinessLogic{
     try{
       $this->logic(); // <- Stąd wyskakują wyjątki generowane przez bazę danych ale gdy logika pracuje w pętli wyjątki powinne być obsłużone dla każdej iteracji indywidualnie
 			                // za pomocą catchLogicException(Exceptiono) a wyskakuje tylko wyjątek nie dotyczący jednego wiersza który powinien przerwać pętle
+//    }  catch (\Exception $E) {
     }  catch (\E $E) {
       $this->catchActionException($E);
-    }
+		}
   }
   /**
    * Zwraca wynik pracy obiektu w postaci JSON.
@@ -79,10 +80,19 @@ abstract class BusinessLogic{
 		}
 		if ( is_a($E, 'E') ) {
 			$this->catchE($E);
+		} else if(is_a($E, 'PDOException')){
+			$this->catchDBException($E);
 		} else {
 			$this->catchException($E);
 		}
   }
+	final protected function catchDBException(\Exception $E){
+		$this->success = false;
+		$this->return_code = $E->getCode();
+		$this->return_msg = 'Błąd bazy danych';
+//		$this->return_msg = 'Błąd bazy danych : ['. $E->getMessage().']';
+	}
+
 	/**
 	 * Obsługuje wyjątek zgłaszany podczas wykonywania pojedynczego cyklu przetwarzania danych wejściowych - jednego kompletu danych wejściowych.
 	 *
@@ -206,7 +216,7 @@ abstract class BusinessLogic{
 					$expression['attribute'] = $this->Firewall->string($key);
 					$expression['value'] = $this->Firewall->string($value['property']);
 				}
-				
+
 				$new_filter[] = $expression;
 			}
 		}

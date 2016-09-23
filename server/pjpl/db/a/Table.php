@@ -335,7 +335,7 @@ abstract class Table{
   public function updateRecordImmediately(Record $Record){
 		try{
 			$this->LastPDOStatement = $this->DB->prepare($this->queryUpdate);
-			$this->LastPDOStatement->execute($this->DI->prepareParamsUpdate($Record));
+			$this->LastPDOStatement->execute($this->DI->QParamsUpdate($Record));
 			$this->readRow($Record->getId());
 		}catch(\Exception $E){
 			$this->catchAllTypeException($E);

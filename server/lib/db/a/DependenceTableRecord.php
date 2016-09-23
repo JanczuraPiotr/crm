@@ -4,8 +4,7 @@ use crmsw\lib\db\Record;
 use pjpl\db\a\Encja;
 
 /**
- * @done 2014-12-19
- * @doc 2014-12-19
+ * Obsługa czasów modyfikacji rekordów
  */
 abstract class DependenceTableRecord extends \pjpl\db\a\DependenceTableRecord{
   abstract public function tabelaId();
@@ -22,13 +21,13 @@ abstract class DependenceTableRecord extends \pjpl\db\a\DependenceTableRecord{
 	 * który będzie wykorzystywany jako część zapytania aktualizującego rekord np : '`nazwisko = :nazwisko, `imie` = :imie'
 	 * @return string Napis będący częścią preprowanego zapytania aktualizującego tabelę bazy danych
 	 */
-	public function prepareQueryUpdate(){
+	public function prepareQueryUpdateUs(){
 		$className = static::className();
 		$row_name = $className::nullRow();
 		$prepare = "";
 		$przecinek = "";
 		foreach ($row_name as $key => $value) {
-			$prepare .= $przecinek." `$key` = :$key";
+			$prepare .= $przecinek." $key = :$key";
 			$przecinek = ",";
 		}
 		$prepare .= ", `update` = :update";
@@ -39,7 +38,7 @@ abstract class DependenceTableRecord extends \pjpl\db\a\DependenceTableRecord{
 	 * @param int $µs
 	 * @return type
 	 */
-	public function prepareParamsUpdatesUs(Record $Record, $µs){
+	public function prepareParamsUpdateUs(Record $Record, $µs){
 		$prepare = [];
 		foreach ($Record->toArray() as $key => $value) {
 			$prepare[':'.$key] = $value;

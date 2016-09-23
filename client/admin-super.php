@@ -32,9 +32,9 @@ if( !isset($_SESSION['USER_STATUS']) || $_SESSION['USER_STATUS'] !== CRM::ADMIN_
     <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0" />
     <meta http-equiv="Pragma" content="no-cache" />
 
-		<link href="ext/4.2/resources/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
-		<script src="ext/4.2/ext-all.js" ></script>
-		<script src="ext/4.2/locale/ext-lang-pl.js"></script>
+		<link href="ext/resources/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
+		<script src="ext/ext-all.js" ></script>
+		<script src="ext/locale/ext-lang-pl.js"></script>
 
 <!--
 		<link href="client/ext/5.1.0/resources/ext-all.css" rel="stylesheet" type="text/css" />
@@ -51,11 +51,16 @@ if( !isset($_SESSION['USER_STATUS']) || $_SESSION['USER_STATUS'] !== CRM::ADMIN_
 
     <link href="css/index.css" rel="stylesheet" type="text/css" />
 
-		<script src="ext/pjpl/RowsFilter.js"></script>
     <script src="lib/const.js"></script>
 		<script src="lib/e.js"></script>
 		<script src="lib.foregin/js/underscore-min.js"></script>
 		<script src="crm.js"></script>
+
+    <script src="app/admin-super.app.js"></script>
+
+
+<!--
+		<script src="ext/pjpl/RowsFilter.js"></script>
 
 		<script src="app/model/firmy.model.js"></script>
 		<script src="app/model/firmy-oddzialy.model.js"></script>
@@ -81,7 +86,7 @@ if( !isset($_SESSION['USER_STATUS']) || $_SESSION['USER_STATUS'] !== CRM::ADMIN_
 
     <script src="app/win/admin/zarzad.window.js" type="text/javascript"></script>
 
-    <script src="app/admin-super.js"></script>
+-->
 
 		<script>
 				Ext.getBody().unmask();

@@ -32,15 +32,13 @@ if( ! isset($_SESSION['USER_STATUS']) || $_SESSION['USER_STATUS'] === CRM::ZARZA
     <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0" />
     <meta http-equiv="Pragma" content="no-cache" />
 
-		<link href="ext/4.2/resources/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
-		<script src="ext/4.2/ext-all.js" ></script>
-		<script src="ext/4.2/locale/ext-lang-pl.js"></script>
+		<link href="ext/resources/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
+		<script src="ext/ext-all.js" ></script>
+		<script src="ext/locale/ext-lang-pl.js"></script>
 
-<!--
-		<link href="client/ext/5.1.0/resources/ext-all.css" rel="stylesheet" type="text/css" />
-		<script src="client/ext/5.1.0/ext-all.js" ></script>
-		<script src="client/ext/5.1.0/locale/ext-locale-pl.js"></script>
--->
+		<link href="ext/resources/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
+		<script src="ext/ext-all.js" ></script>
+		<script src="ext/locale/ext-lang-pl.js"></script>
 
   </head>
   <body>
@@ -57,6 +55,13 @@ if( ! isset($_SESSION['USER_STATUS']) || $_SESSION['USER_STATUS'] === CRM::ZARZA
 		<script src="crm.js"></script>
 		<script src="extcrm.js"></script>
 
+    <script src="app/zarzad-prezes.js"></script>
+
+		<script>
+				Ext.getBody().unmask();
+		</script>
+
+<!--
 		<script src="app/form/generator-zadan.form.js"></script>
 		<script src="app/form/zmiana-hasla.form.js"></script>
 
@@ -166,7 +171,7 @@ if( ! isset($_SESSION['USER_STATUS']) || $_SESSION['USER_STATUS'] === CRM::ZARZA
 		<script src="app/form/produkty.form.js"></script>
 		<script src="app/view/akta-sprawy.view.js"></script>
 
-		<!--<script src="app/view/zarzad/naglowki-zadan-procedowanych-klienta.grid.js"></script>-->
+		<script src="app/view/zarzad/naglowki-zadan-procedowanych-klienta.grid.js"></script>
 
 		<script src="app/win/banki.window.js"></script>
 		<script src="app/win/help.window.js"></script>
@@ -195,12 +200,6 @@ if( ! isset($_SESSION['USER_STATUS']) || $_SESSION['USER_STATUS'] === CRM::ZARZA
 		<script src="app/win/zarzad/wiazanie-firm-bankow.window.js"></script>
 		<script src="app/win/zarzad/wskaz-stanowisko.window.js"></script>
 		<script src="app/win/zarzad/zespoly.window.js"></script>
-
-    <script src="app/zarzad-prezes.js"></script>
-
-
-		<script>
-				Ext.getBody().unmask();
-		</script>
+-->
   </body>
 </html>

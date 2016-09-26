@@ -1,7 +1,7 @@
 /**
  * @task 2014-10-30 Zamiana response.ret >>> response.code
  * @task 2014-10-30 Dodanie do response tablicy "err" informującej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
- * @work 4.2.0
+ * @done 4.2.0
  */
 Ext.define('CRM.store.Zarzad',{
 	extend : 'Ext.data.Store',
@@ -12,8 +12,10 @@ Ext.define('CRM.store.Zarzad',{
 	idProperty : 'id',
 
 	constructor : function(){
-		this.firma_id = 0;
-		this.superclass.constructor.call(this,arguments);
+		var def = this;
+		def.firma_id = 0;
+		def.callParent(arguments);
+//		this.superclass.constructor.call(this,arguments);
 	},
 
 	listeners : { //ZarzadStore::listenets
@@ -22,7 +24,7 @@ Ext.define('CRM.store.Zarzad',{
 			/**
 			 * Odpalane po wykonaniu zapisu na server
 			 */
-			console.log('ZarzadStore::listeners::write');
+			console.log('CRM.store.Zarzad::listeners::write');
 			console.log(operation);
 			switch(operation.action){
 				case 'create':
@@ -45,7 +47,7 @@ Ext.define('CRM.store.Zarzad',{
 		},
 		beforesync: function(options,eOpts){
 			var def = this;
-			console.log('ZarzadStore::listeners::beforesync');
+			console.log('CRM.store.Zarzad::listeners::beforesync');
 			console.log(options);
 			if(def.firmaId === 0){
 				return false;
@@ -99,7 +101,7 @@ Ext.define('CRM.store.Zarzad',{
 				/*
 				 * response.responseText - zawiera całą treść zwróconą przez serwer
 				 */
-				console.log('ZarzadStore::proxy::listeners::expetion');
+				console.log('CRM.store.Zarzad::proxy::listeners::expetion');
 				console.log(proxy);
 				console.log(response.responseText);
 				console.log(operation);
@@ -153,7 +155,17 @@ Ext.define('CRM.store.Zarzad',{
 		} // ZarzadStore::proxy::reader
 
 	}, // ZarzadStore::proxy
-
+	/**
+	 * Jeżeli określono prezesa to zwraca jego id. W przeciwnym razie zwraca -1.
+	 * @returns {undefined}
+	 */
+	getPrezes : function(firmaId){console.log('CRM.store.Zarzad::getPrezes()');
+		var def = this;
+		if(firmaId){
+			def.setFirmaId(firmaId);
+		}
+		return def.getAt(def.find('prezes',true));
+	},
 	setFirmaId : function(firmaId){
 		var def = this;
 

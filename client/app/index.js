@@ -75,6 +75,7 @@ Ext.define('LoginForm', {
                   },
                   success: function(response){
 										var resp = Ext.JSON.decode(response.responseText);
+										console.log(resp);
 										CRM.user_status = parseInt(resp.data.user_status);
 										CRM.firma_id = parseInt(resp.data.firma_id);
 										CRM.placowka_id = parseInt(resp.data.placowka_id);

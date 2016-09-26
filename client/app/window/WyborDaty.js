@@ -1,7 +1,7 @@
 /**
- * @task 4.2.0
+ * @done 4.2.0
  */
-Ext.define('WyborDatyWindow',{
+Ext.define('CRM.window.WyborDaty',{
 	extend : 'Ext.window.Window',
 	title : 'Wybierz datę',
 	autoShow : false,

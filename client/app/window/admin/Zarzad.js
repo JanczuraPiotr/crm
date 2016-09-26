@@ -2,7 +2,7 @@
  * Wskazanie prezesa z pośród pracowników firmy.
  * Edycja loginu i hasła pracownika.
  *
- * @work 4.2.0
+ * @done 4.2.0
  */
 Ext.define('CRM.window.admin.Zarzad',{
 	extend : 'Ext.window.Window',
@@ -12,20 +12,20 @@ Ext.define('CRM.window.admin.Zarzad',{
 
 	requires: [
 		'CRM.grid.Firmy',
-		'CRM.form.ZmianaHasla',
-		'CRM.grid.Zarzad'
+		'CRM.grid.Zarzad',
+		'CRM.form.ZmianaHasla'
 	],
 
-	constructor : function(){
+	initComponent : function(){
 		var def = this;
 
 		def.ZmianaHaslaForm = new Ext.create('CRM.form.ZmianaHasla');
 
 		def.ZarzadGrid = new Ext.create('CRM.grid.Zarzad');
-		def.ZarzadGrid.on('select',function( thiss, record, index, eOpts ){console.log('CRM.window.admin.Zarzad::CRM.grid.Zarząd::select');
+		def.ZarzadGrid.on('select',function( grid, record, index, eOpts ){console.log('CRM.window.admin.Zarzad::CRM.grid.Zarząd::select');
 			def.ZmianaHaslaForm.setPracownik(record.data.id,record.data.nazwisko+' '+record.data.imie);
 		});
-		def.ZarzadGrid.on('deselect',function( thiss, record, index, eOpts ){console.log('CRM.window.admin.Zarzad::CRM.grid.Zarzad::deselect');
+		def.ZarzadGrid.on('deselect',function( grid, record, index, eOpts ){console.log('CRM.window.admin.Zarzad::CRM.grid.Zarzad::deselect');
 			def.ZmianaHaslaForm.setPracownik(0,'');
 		});
 		def.FirmyStore = new Ext.create('CRM.store.Firmy');
@@ -63,13 +63,13 @@ Ext.define('CRM.window.admin.Zarzad',{
 				},{
 						text : 'dodaj / usuń',
 						handler : function(){
-							var FG = new Ext.create('CRM.grid.Firmy');
-							var FW = new Ext.create('Ext.window.Window',{
+							var gridFirmy = new Ext.create('CRM.grid.Firmy');
+							var window = new Ext.create('Ext.window.Window',{
 								title : 'Firmy',
 								modal : true,
 								autoShow : false,
 								items : [
-									FG
+									gridFirmy
 								],
 								listeners : {
 									close : function(panel , eOpts){
@@ -77,12 +77,12 @@ Ext.define('CRM.window.admin.Zarzad',{
 									}
 								}
 							});
-							FW.show();
+							window.show();
 						}
 					}
 			], // bbar
 			listeners : {
-				select : function( thiss, record, index, eOpts ){console.log('ZarzadWindow::FirmyGrid::select');
+				select : function( grid, record, index, eOpts ){console.log('ZarzadWindow::FirmyGrid::select');
 					def.ZarzadGrid.setFirmaId(record.data.id);
 					def.ZarzadGrid.setFirmaNazwa(record.data.nazwa);
 				},
@@ -103,7 +103,7 @@ Ext.define('CRM.window.admin.Zarzad',{
 			resizable : false
 		});
 
-		def.superclass.constructor.call(def, arguments);
+		def.callParent();
 
 	},
 

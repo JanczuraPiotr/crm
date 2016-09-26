@@ -1,5 +1,5 @@
 /**
- * @work 4.2.0
+ * @done 4.2.0
  */
 Ext.define('CRM.grid.Zarzad',{
 	extend : 'Ext.grid.Panel',
@@ -10,17 +10,27 @@ Ext.define('CRM.grid.Zarzad',{
 
 	requires : [
 		'CRM.store.Zarzad',
-		'CRM.grid.Pracownicy'
+		'CRM.grid.Pracownicy',
+		'CRM.window.WyborDaty'
 	],
 
 	constructor : function(){
 		var def = this;
+
+		def.ZarzadStore = Ext.create('CRM.store.Zarzad');
+		// Poniższe 2 wiersze pozwoliły na odczytanie wybranej firmy już przy pierwszym kliknięciu.
+		// Bez tego dopiero drugie wywołanie getPrezesId() zwracało wybraną firmę.
+		def.ZarzadStore.setFirmaId(0);
+		def.ZarzadStore.load();
+
+		def.callParent(arguments);
+	},
+
+	initComponent : function(){
+		var def = this;
 		def.disabled = true;
 		def.width = 335;
 		def.height = 600;
-
-		def.ZarzadStore = new Ext.create('CRM.store.Zarzad');
-
 
 		Ext.apply(def,{
 				pageSize : 10,
@@ -76,39 +86,44 @@ Ext.define('CRM.grid.Zarzad',{
 							PF.show();
 						}
 					}
-				] // bbar
-		});
-
-		def.superclass.constructor.call(def,arguments);
-
-	},
-	listeners: {
-		cellclick : function(cell, td, cellIndex, record, tr, rowIndex, e, eOpts ){
-			if(cellIndex === 3){
-				var DataWindow = new Ext.create('WyborDatyWindow',{
-					title : 'data ustanienia prezesem',
-					onWybranoDate : function(data){
-							Ext.Ajax.request({
-								url : '../server/ajax/prezes.php?action=create',
-								params : {
-									pracownik_id : record.data.id,
-									firma_id : record.data.firma_id,
-									prezes : 1,
-									data_od : data
-								},
-								success : function(response){
-									var resp = Ext.JSON.decode(response.responseText);
-									/**
-									 * @todo obsłuż komunikację
-									 */
+				], // bbar
+				listeners: {
+					cellclick : function(cell, td, cellIndex, record, tr, rowIndex, e, eOpts ){console.log('CRM.grid.Zarzad::cellclick()');
+						if(cellIndex === 3){
+							var DataWindow = Ext.create('CRM.window.WyborDaty',{
+								title : 'data ustanienia prezesem',
+								onWybranoDate : function(data){
+										Ext.Ajax.request({
+											url : '../server/ajax/prezes.php?action=create',
+											params : {
+												pracownik_id : record.data.id,
+												firma_id : record.data.firma_id,
+												prezes : 1,
+												data_od : data
+											},
+											success : function(response){console.log('CRM.grid.Zarzad::cellclick::ajax::success');
+												var resp = Ext.JSON.decode(response.responseText);
+												if(resp.success === true){
+													def.store.reload();
+												}else{
+													Ext.Msg.alert('Błąd',resp.message);
+												}
+											}
+										});
 								}
 							});
+							DataWindow.show();
+						}
 					}
-				});
-				DataWindow.show();
-			}
-		}
-	} ,
+				}
+
+		});
+		def.callParent();
+//		def.superclass.constructor.call(def,arguments);
+	},
+	getPrezes : function(firmaId){console.log('CRM.grid.Zarzad::getPrezesId()');
+		return this.ZarzadStore.getPrezes(firmaId);
+	},
 	setFirmaNazwa : function(nazwa){
 		var def = this;
 		def.setTitle('Pracownicy firmy : '+nazwa);

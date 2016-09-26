@@ -23,4 +23,6 @@ var CRM = new function(){
 	CRM.stanowisko_id								= null;
 	CRM.pracownik_id								= null;
 	CRM.pracownik_nazwa							= null;
+
+	return CRM;
 };

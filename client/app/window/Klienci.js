@@ -19,11 +19,11 @@ Ext.define('CRM.window.Klienci',{
 			flex :1,
 			listeners : {
 				select : function( grid, record, index, eOpts ){
-					console.log('KlienciWindow.KlienciGrid.select');
+					console.log('CRM.window.Klienci.KlienciGrid.select');
 					def.htmlEditor.setValue(record.data.opis);
 				},
 				deselect : function( grid, record, index, eOpts ){
-					console.log('KlienciWindow.KlienciGrid.deselect');
+					console.log('CRM.window.Klienci.KlienciGrid.deselect');
 					def.htmlEditor.setValue('');
 				},
 			},
@@ -73,20 +73,20 @@ Ext.define('CRM.window.Klienci',{
 						},
 					]
 				}
-			]
+			],
+			listeners : {
+				close : function(panel,eOpts){console.log('CRM.window.Klienci.close');
+					KlienciWindow = null;
+				}
+			},
 
 		});
-		def.callParent(arguments);
+		def.callParent();
 	},
 
-	listeners : {
-		close : function(panel,eOpts){
-			klienciWindow = null;
-		}
-	},
 	EdytorSetValue : function(value){
 		var def = this;
 		def.htmlEdytor.setValue(value);
 	}
 });
-var klienciWindow = null; // @todo przepisać na singletona w konstruktorze
+var KlienciWindow = null; // @todo przepisać na singletona w konstruktorze

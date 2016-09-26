@@ -4,12 +4,14 @@ Ext.application({
     appFolder: 'app',
 
     requires: [
-//			'CRM.window.Klienci'
-//			'CRM.store.Firmy',
-//			'CRM.grid.Firmy',
-//			'CRM.window.admin.Zarzad',
-//			'CRM.window.DaneLogowania',
-//			'CRM.window.Help'
+			'CRM.window.Klienci',
+
+			'CRM.window.zarzad.GeneratorZadan',
+
+			'CRM.store.Firmy',
+			'CRM.grid.Firmy',
+			'CRM.window.DaneLogowania',
+			'CRM.window.Help'
 		],
     launch: function() {
 			Ext.onReady(function(){
@@ -38,7 +40,7 @@ Ext.application({
 									try{
 										KlienciWindow.show().expand();
 									}catch(e){
-										KlienciWindow = new Ext.create('CRM.window.Klienci');
+										KlienciWindow = Ext.create('CRM.window.Klienci');
 										KlienciWindow.show();
 									}
 								}
@@ -49,10 +51,10 @@ Ext.application({
 									text : 'generowanie zadan',
 									handler : function(p1,p2,p3,p4){
 										try{
-											generatorZadanWindow.show().expand();
+											GeneratorZadanWindow.show().expand();
 										}catch(e){
-											generatorZadanWindow = Ext.create('GeneratorZadanWindow');
-											generatorZadanWindow.show();
+											GeneratorZadanWindow = new Ext.create('CRM.window.zarzad.GeneratorZadan');
+											GeneratorZadanWindow.show();
 										}
 									}
 								},{
@@ -252,7 +254,7 @@ Ext.application({
 						},{
 							text : 'pomoc',
 							handler : function(){
-								Ext.create('HelpWindow','zarzad-prezes');
+								Ext.create('CRM.window.Help','zarzad-prezes');
 							}
 						},{
 							text : 'zalogowano jako : prezes zarządu',

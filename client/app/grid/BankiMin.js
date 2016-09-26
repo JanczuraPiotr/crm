@@ -1,18 +1,21 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  */
-Ext.define('BankiMinGrid',{
+Ext.define('CRM.grid.BankiMin',{
 	extend : 'Ext.grid.Panel',
-	xtype : 'banki-grid',
 	autoLoad : false,
 	autoSync : true,
 	autoSave : false,
 	idProperty : 'id',
 
+	requires : [
+		'CRM.store.Banki'
+	],
+
 	initComponent : function(){
 		var def = this;
 
-		def.BankiStore = new Ext.create('BankiStore');
+		def.BankiStore = new Ext.create('CRM.store.Banki');
 
 		Ext.apply(this,{
 				pageSize : 10,

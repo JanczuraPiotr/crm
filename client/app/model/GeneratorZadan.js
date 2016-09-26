@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @done 4.2.0
  */
 var GeneratorZadanFields = [
 	{
@@ -37,10 +37,8 @@ var GeneratorZadanFields = [
 	}
 ];
 
-Ext.define('GeneratorZadanModel',{
+Ext.define('CRM.model.GeneratorZadan',{
 	extend : 'Ext.data.Model',
-	xtype : 'generator-zadan-model',
-	alias : 'generator-zadan-model',
 	fields : GeneratorZadanFields,
 	idProperty : 'id'
 });

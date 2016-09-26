@@ -1,17 +1,22 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  */
-Ext.define('GeneratorZadanWindow',{
+Ext.define('CRM.window.zarzad.GeneratorZadan',{
 	extend : 'Ext.window.Window',
 	title : 'Generator Zadań',
 	collapsible : true,
 	layout : 'hbox',
 
+	requires : [
+		'CRM.form.GeneratorZadan',
+		'CRM.grid.BankiMin'
+	],
+
 	constructor : function(){
 		var def = this;
-		def.GeneratorZadanForm = new Ext.create('GeneratorZadanForm');
+		def.GeneratorZadanForm = new Ext.create('CRM.form.GeneratorZadan');
 
-		def.BankiMinGrid = new Ext.create('BankiMinGrid',{
+		def.BankiMinGrid = new Ext.create('CRM.grid.BankiMin',{
 			height : 600,
 			listeners : {
 				select : function( thiss, record, index, eOpts ){

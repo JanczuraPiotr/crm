@@ -1,10 +1,13 @@
 /**
- * @done 4.2.0
+ * @work 4.2.0
  */
-Ext.define('GeneratorZadanForm',{
+Ext.define('CRM.form.GeneratorZadan',{
 	extend : 'Ext.form.Panel',
 	title : 'Generator Zadań',
-
+	requires : [
+		'CRM.grid.GeneratorZadan',
+		'CRM.model.GeneratorZadan'
+	],
 	constructor : function(){
 		var def = this;
 		def.index = -1; // index rekordu umieszczonego w formularzy
@@ -54,7 +57,7 @@ Ext.define('GeneratorZadanForm',{
 			]
 		});
 
-		def.gneratorZadanGrid = new Ext.create('GeneratorZadanGrid',{
+		def.gneratorZadanGrid = new Ext.create('CRM.grid.GeneratorZadan',{
 			height : 574,
 			width : 360,
 			listeners : {
@@ -93,8 +96,9 @@ Ext.define('GeneratorZadanForm',{
 //		def.superclass.constructor.call(def,arguments);
 	},
 
-	initComponent : function(){console.log('GeneratorZadanForm::initComponent()');
+	initComponent : function(){console.log('CRM.grid.GeneratorZadan::initComponent()');
 		var def = this;
+
 		Ext.apply(def,{
 			frame : true,
 			padding : 0,
@@ -107,6 +111,7 @@ Ext.define('GeneratorZadanForm',{
 				def.configContainer
 			]
 		});
+
 		def.callParent();
 	},
 
@@ -125,7 +130,7 @@ Ext.define('GeneratorZadanForm',{
 	setBankId : function(bank_id){
 		var def = this;
 		def.gneratorZadanGrid.setBankId(bank_id);
-		def.loadRecord(new GeneratorZadanModel({bank_id:'' ,symbol:'',nazwa:'',opis:'',data_od:'',data_do:''}));
+		def.loadRecord(Ext.create('CRM.model.GeneratorZadan',{bank_id:'' ,symbol:'',nazwa:'',opis:'',data_od:'',data_do:''}));
 		def.index = -1;
 		def.produktId = -1;
 	},

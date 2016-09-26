@@ -19,10 +19,10 @@ Ext.define('CRM.window.zarzad.Zarzad',{
 		def.ZmianaHaslaForm = new Ext.create('CRM.window.ZmianaHasla');
 		def.ZarzadGrid = new Ext.create('CRM.grid.Zarzad');
 		def.ZarzadGrid.setFirmaId(CRM.firma_id);
-		def.ZarzadGrid.on('select',function( thiss, record, index, eOpts ){
+		def.ZarzadGrid.on('select',function( grid, record, index, eOpts ){
 			def.ZmianaHaslaForm.setPracownik(record.data.id,record.data.nazwisko+' '+record.data.imie);
 		});
-		def.ZarzadGrid.on('deselect',function( thiss, record, index, eOpts ){
+		def.ZarzadGrid.on('deselect',function( grid, record, index, eOpts ){
 			def.ZmianaHaslaForm.setPracownik(0,'');
 		});
 

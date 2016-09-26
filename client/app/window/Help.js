@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @work 4.2.0
  */
 Ext.define('CRM.window.Help',{
 	extend : 'Ext.window.Window',
@@ -18,6 +18,7 @@ Ext.define('CRM.window.Help',{
 			return;
 		}
 		HelpWindowSingleton = def;
+
 		def.callParent(arguments);
 	},
 

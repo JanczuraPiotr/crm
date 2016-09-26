@@ -1,26 +1,26 @@
-/**
+	/**
  * @task 2014-10-30 Zamiana response.ret >>> response.code
  * @task 2014-10-30 Dodanie do response tablicy "err" informującej o błędach rozpoznanych indywidualnie dla każdej encji podczas przetwarzania przez BusinessLogic
  * @work 4.2.0
  */
-Ext.define('BankiStore',{
+Ext.define('CRM.store.Produkty',{
 	extend : 'Ext.data.Store',
-	model : BankiModel,
-	autoLoad : true,
+	model : 'CRM.model.Produkty',
+	autoLoad : false,
 	autoSync : true,
 	autoSave : false,
 	idProperty : 'id',
 
 	constructor : function(){
-		thisBS = this; // @todo usuń zmienną globalną thisBS = this >> var def = this
-		thisBS.superclass.constructor.call(this,arguments);
+		var def = this; // @todo usun zmienną globalną thisPS = this >> var def = this
+		def.bank_id = 0;
+//		def.callParent(arguments);
+		def.superclass.constructor.call(this,arguments);
 	},
 
-	listeners : { //BankiStore::listenets
+	listeners : { //ProduktyStore::listenets
 		write : function(store,operation,eOpts){
-			/**
-			 * Odpalane po wykonaniu zapisu na server
-			 */
+			var listener = this;
 			switch(operation.action){
 				case 'create':
 					for(var record in operation.records){
@@ -29,10 +29,22 @@ Ext.define('BankiStore',{
 						recStore.data.id = operation.records[record].data.id;
 						delete recStore.data.tmpId;
 					}
+					listener.onWriteCreate(store,operation,eOpts);
+					break;
+				case 'read':
+					break;
+				case 'update':
+					break;
+				case 'destroy':
 					break;
 			}
 		},
 		beforesync: function(options,eOpts){
+			var listener = this;
+			if(listener.bank_id === 0){
+				console.log('CRM.store.Produkty::listeners::beforesync -> podłącz produkt do banku');
+				return false;
+			}
 			for(var action in options){
 				switch(action){
 					case 'create':
@@ -40,6 +52,7 @@ Ext.define('BankiStore',{
 						if(data.symbol === "" || data.nazwa === ''){
 							return false;
 						}
+						break;
 						break;
 					case 'update':
 						var data = null;
@@ -57,20 +70,20 @@ Ext.define('BankiStore',{
 				}
 			}
 		}
-	},//BankiStore::liste
+	},//ProduktyStore::liste
 
 
-	proxy:{ // BankiStore::proxy
+	proxy:{ // ProduktyStore::proxy
 		type: 'ajax',
 		method : 'POST',
 		api : {
-			create: '../server/ajax/banki.php?action=create',
-			read: '../server/ajax/banki.php?action=read',
-			update: '../server/ajax/banki.php?action=update',
-			destroy: '../server/ajax/banki.php?action=delete'
+			create: '../server/ajax/produkty.php?action=create',
+			read: '../server/ajax/produkty.php?action=read',
+			update: '../server/ajax/produkty.php?action=update',
+			destroy: '../server/ajax/produkty.php?action=delete'
 		},
 
-		listeners : { // BankiStore::proxy::listeners
+		listeners : { // ProduktyStore::proxy::listeners
 			exception: function(proxy, response, operation,eOpts){
 				var resp = Ext.decode(response.responseText);
 
@@ -84,7 +97,7 @@ Ext.define('BankiStore',{
 										Ext.Msg.alert('Błąd !','<hr>Nie udało się dodać banku. <hr> Prawdopodobny powód : <br> podano symbol lub nazwę zapisane już w bazie, <hr>Proszę nadać unikalne wartości');
 										break;
 								}
-								thisBS.rejectChanges();
+								def.rejectChanges();
 								break;
 						}
 
@@ -96,33 +109,57 @@ Ext.define('BankiStore',{
 										Ext.Msg.alert('Błąd !','Nie udało się usunąć banku z powodu zalenych od niej rekordów w bazie');
 										break;
 								}
-								thisBS.rejectChanges();
+								def.rejectChanges();
 								break;
 						}
 						break;
 				}
 
 			}
-		},// BankiStore::proxy::listeners
+		},// ProduktyStore::proxy::listeners
 
-		writer : { // BankiStore::proxy::writer
+		writer : { // ProduktyStore::proxy::writer
 			writeAllFields : false,
 			allowSingle : false,
 			root : 'data',
 			getRecordData : function(record,operation){
 				return record.data;
 			}
-		}, // BankiStore::proxy::writer
+		}, // ProduktyStore::proxy::writer
 
-		reader : { // BankiStore::proxy::reader
+		reader : { // ProduktyStore::proxy::reader
 			type : 'json',
 			root : 'data',
 			total : 'countTotal'
-		} // CBankiStore::proxy::reader
+		} // CProduktyStore::proxy::reader
 
-	} // BankiStore::proxy
+	}, // ProduktyStore::proxy
 
+	onWriteCreate : function(store,operation,eOpts){
+		var def = this;
+		console.log('CRM.store.Produkty::onWriteCreate');
+	},
+	setBankId : function(bank_id){
+		var def = this;
+		def.bank_id = bank_id;
+		if(bank_id > 0){
+			def.clearFilter();
+			def.filter({
+				property: 'bank_id',
+				value: bank_id,
+				operator: '='
+			});
+			def.load();
+		}else{
+			def.clearFilter();
+			def.filter({
+				property: 'bank_id',
+				value: bank_id,
+				operator: '='
+			});
+		}
+	}
 
 });
 
-//var BankiStore = new Ext.create('BankiStore');
+//var ProduktyStore = new Ext.create('ProduktyStore');

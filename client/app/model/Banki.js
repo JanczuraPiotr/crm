@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @done 4.2.0
  */
 var BankiFields = [
 	{
@@ -46,10 +46,8 @@ var BankiFields = [
 	}
 ];
 
-Ext.define('BankiModel',{
+Ext.define('CRM.model.Banki',{
 	extend : 'Ext.data.Model',
-	xtype : 'bank-model',
-	alias : 'bank-model',
 	fields : BankiFields,
 	idProperty : 'id'
 });

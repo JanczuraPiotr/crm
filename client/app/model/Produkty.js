@@ -1,5 +1,5 @@
 /**
- * @task 4.2.0
+ * @done 4.2.0
  */
 var ProduktyFields = [
 	{
@@ -27,10 +27,8 @@ var ProduktyFields = [
 		dateFormat : 'Y-m-d'
 	}
 ];
-Ext.define('ProduktyModel',{
+Ext.define('CRM.model.Produkty',{
 	extend : 'Ext.data.Model',
-	xtype : 'produkty-model',
-	alias : 'produkty-model',
 	fields : ProduktyFields,
 	idProperty : 'id'
 });

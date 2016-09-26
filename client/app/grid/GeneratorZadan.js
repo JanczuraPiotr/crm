@@ -1,14 +1,17 @@
 /**
  * @done 4.2.0
  */
-Ext.define('GeneratorZadanGrid',{
+Ext.define('CRM.grid.GeneratorZadan',{
 	extend : 'Ext.grid.Panel',
 
+	requires : [
+		'CRM.store.Produkty'
+	],
 	constructor : function(){
 	  var def = this;
 		def.bankId = -1;
 
-		def.produktyStore = Ext.create('ProduktyStore');
+		def.produktyStore = Ext.create('CRM.store.Produkty');
 		def.rowExpander = Ext.create('Ext.grid.plugin.RowExpander',{
 			selectRowOnExpand : true,
 			expandOnDblClick : true,

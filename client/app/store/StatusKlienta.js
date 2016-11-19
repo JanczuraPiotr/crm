@@ -32,7 +32,7 @@ Ext.define('CRM.store.StatusKlienta',{
 				switch(action){
 					case 'create':
 						var	data = options.create[0].data;
-						if( thisSKS.warunekZapisu(data) === false){
+						if( thisSKS.warunekZapisu(data) === false){  // @todo nieznana zamienna thisSKS
 							return false;
 						}
 						break;
@@ -43,7 +43,7 @@ Ext.define('CRM.store.StatusKlienta',{
 						if(options.update !== undefined){
 							data = options.update[0].data;
 						}
-						if(data.tmpId !== undefined && thisSKS.warunekZapisu(data) === false ){
+						if(data.tmpId !== undefined && thisSKS.warunekZapisu(data) === false ){ // @todo nieznana zamienna thisSKS
 							// Tworzony jest nowy rekord
 							return false;
 						}
@@ -86,7 +86,7 @@ Ext.define('CRM.store.StatusKlienta',{
 										Ext.Msg.alert('Błąd !','<hr>Nie udało się rekordu. <hr> Prawdopodobny powód : <br> podano wartości zapisane już w bazie, <hr>Proszę nadać unikalne wartości');
 										break;
 								}
-								thisSKS.rejectChanges();
+								thisSKS.rejectChanges();  // @todo nieznana zamienna thisSKS
 								break;
 						}
 
@@ -98,7 +98,7 @@ Ext.define('CRM.store.StatusKlienta',{
 										Ext.Msg.alert('Błąd !','Nie udało się usunąć rekordu z powodu zalenych od niej rekordów w bazie');
 										break;
 								}
-								thisSKS.rejectChanges();
+								thisSKS.rejectChanges();  // @todo nieznana zamienna thisSKS
 								break;
 						}
 						break;
